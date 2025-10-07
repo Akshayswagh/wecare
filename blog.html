@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>We Care Physiotherapist</title>
+    <title>We Care Physiotherapist — Blog</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -34,6 +34,31 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <style>
+      /* Minor local tweaks for previews */
+      .blog-item .blog-img { height: 220px; overflow: hidden; }
+      .blog-item .blog-img img { object-fit: cover; height: 100%; width: 100%; }
+      .post-excerpt { max-height: 5.2rem; overflow: hidden; }
+      .author-meta { font-size: 0.9rem; color: #6c757d; }
+    </style>
+    <style>
+  /* Add this CSS to your style.css or inside <style> */
+  .blog-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .blog-centent {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .blog-centent .post-excerpt {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
   </head>
 
   <body>
@@ -103,14 +128,11 @@
       <nav
         class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0"
       >
-        <!-- <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fas fa-star-of-life me-3"></i>Terapia</h1> -->
         <img
           src="img/logo new.png"
           alt="Logo"
           style="height: 100px; width: 150px"
         />
-        <!-- </a> -->
         <button
           class="navbar-toggler"
           type="button"
@@ -122,25 +144,45 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto py-0">
             <a href="index.html" class="nav-item nav-link">Home</a>
-            <a href="about.html" class="nav-item nav-link">About</a>
-            <a href="service.html" class="nav-item nav-link">Services</a>
+           <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >About</a
+              >
+              <div class="dropdown-menu m-0">
+                <a href="ourjourney.html" class="dropdown-item">Our Journey</a>
+                <a href="team.html" class="dropdown-item">Our Team</a>
+                <a href="FAQs.html" class="dropdown-item">FAQs
+                </a>
+                
+              </div>
+            </div>
+             <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                <div class="dropdown-menu m-0">
+                  <a href="physiotherapy.html" class="dropdown-item">Physiotherapy</a>
+                  <a href="injuries.html" class="dropdown-item">Injuries We Treat</a>
+                </div>
+           </div>
             <div class="nav-item dropdown">
               <a
                 href="#"
-                class="nav-link dropdown-toggle active"
+                class="nav-link dropdown-toggle"
                 data-bs-toggle="dropdown"
-                >Pages</a
+                >Fees & Packages</a
               >
               <div class="dropdown-menu m-0">
                 <a href="appointment.html" class="dropdown-item">Appointment</a>
                 <a href="feature.html" class="dropdown-item">Features</a>
-                <a href="blog.html" class="dropdown-item active">Our Blog</a>
                 <a href="team.html" class="dropdown-item">Our Team</a>
                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                 <a href="404.html" class="dropdown-item">404 Page</a>
               </div>
             </div>
             <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+            <a href="blog.html" class="nav-item nav-link active"> Blog</a>
           </div>
           <a
             href="appointment.html"
@@ -166,7 +208,7 @@
           data-wow-delay="0.3s"
         >
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Pages</a></li>
+          <li class="breadcrumb-item"><a href="#">Fees & Packages</a></li>
           <li class="breadcrumb-item active text-primary">Blog</li>
         </ol>
       </div>
@@ -190,110 +232,121 @@
             recovery and long-term wellness.
           </p>
         </div>
+
         <div class="row g-4 justify-content-center">
-          <div
-            class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp"
-            data-wow-delay="0.1s"
-          >
-            <div class="blog-item rounded">
-              <div class="blog-img">
-                <img src="img/blog-1.jpg" class="img-fluid w-100" alt="Image" />
-              </div>
-              <div class="blog-centent p-4">
-                <div class="d-flex justify-content-between mb-4">
-                  <p class="mb-0 text-muted">
-                    <i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045
-                  </p>
-                  <a href="#" class="text-muted"
-                    ><span class="fa fa-comments text-primary"></span> 3
-                    Comments</a
-                  >
-                </div>
-                <a href="#" class="h4"
-                  >Remove back Pain While Working on o physio</a
-                >
-                <p class="my-4">
-                  Relieve back pain while working with personalized
-                  physiotherapy techniques designed for comfort and effective
-                  recovery.
-                </p>
-                <a
-                  href="#"
-                  class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1"
-                  >Read More</a
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <div class="blog-item rounded">
-              <div class="blog-img">
-                <img src="img/blog-2.jpg" class="img-fluid w-100" alt="Image" />
-              </div>
-              <div class="blog-centent p-4">
-                <div class="d-flex justify-content-between mb-4">
-                  <p class="mb-0 text-muted">
-                    <i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045
-                  </p>
-                  <a href="#" class="text-muted"
-                    ><span class="fa fa-comments text-primary"></span> 3
-                    Comments</a
-                  >
-                </div>
-                <a href="#" class="h4"
-                  >Benefits of a weekly physiotherapy session</a
-                >
-                <p class="my-4">
-                  Weekly physiotherapy sessions improve mobility, reduce pain,
-                  prevent injuries, enhance strength, and promote overall
-                  wellness.
-                </p>
-                <a
-                  href="#"
-                  class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1"
-                  >Read More</a
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <div class="blog-item rounded">
-              <div class="blog-img">
-                <img src="img/blog-3.jpg" class="img-fluid w-100" alt="Image" />
-              </div>
-              <div class="blog-centent p-4">
-                <div class="d-flex justify-content-between mb-4">
-                  <p class="mb-0 text-muted">
-                    <i class="fa fa-calendar-alt text-primary"></i> 01 Jan 2045
-                  </p>
-                  <a href="#" class="text-muted"
-                    ><span class="fa fa-comments text-primary"></span> 3
-                    Comments</a
-                  >
-                </div>
-                <a href="#" class="h4"
-                  >Regular excercise can slow ageing process</a
-                >
-                <p class="my-4">
-                  Regular exercise can slow the aging process by improving
-                  strength, flexibility, and maintaining overall health.
-                </p>
-                <a
-                  href="#"
-                  class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1"
-                  >Read More</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- Blog Card 1 -->
+  <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="blog-item rounded shadow-sm h-100">
+      <div class="blog-img">
+        <img src="img/blog-1.jpg" class="img-fluid w-100" alt="Lifestyle and Movement" />
       </div>
+      <div class="blog-centent p-4">
+        <div class="d-flex justify-content-between mb-3">
+          <p class="mb-0 text-muted author-meta">
+            <i class="fa fa-calendar-alt text-primary"></i> 06 Oct 2025 &nbsp; • &nbsp; <strong>CoreMotion</strong>
+          </p>
+          <a href="blog1.html" class="text-muted"><span class="fa fa-comments text-primary"></span> 0 Comments</a>
+        </div>
+        <a href="blog1.html" class="h4">Lifestyle, Movement, and Recovery — The Core of Long-Term Health</a>
+        <p class="my-3 post-excerpt">
+          Healing isn’t a one-time event. It’s a way of living — built on movement, awareness, and small daily choices that keep your body thriving...
+        </p>
+        <a href="blog1.html" class="btn btn-primary rounded-pill text-white py-2 px-4 mt-auto">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Card 2 -->
+  <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+    <div class="blog-item rounded shadow-sm h-100">
+      <div class="blog-img">
+        <img src="img/blog-2.jpg" class="img-fluid w-100" alt="Physiotherapy vs Painkillers" />
+      </div>
+      <div class="blog-centent p-4">
+        <div class="d-flex justify-content-between mb-3">
+          <p class="mb-0 text-muted author-meta">
+            <i class="fa fa-calendar-alt text-primary"></i> 06 Oct 2025 &nbsp; • &nbsp; <strong>CoreMotion</strong>
+          </p>
+          <a href="blog2.html" class="text-muted"><span class="fa fa-comments text-primary"></span> 0 Comments</a>
+        </div>
+        <a href="blog2.html" class="h4">Physiotherapy vs Painkillers — The Smarter Way to Heal</a>
+        <p class="my-3 post-excerpt">
+          When pain strikes, the first instinct is to make it stop — and painkillers do exactly that. They work fast, they’re easy to find, and for a few hours, life feels normal again...
+        </p>
+        <a href="blog2.html" class="btn btn-primary rounded-pill text-white py-2 px-4 mt-auto">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Card 3 -->
+  <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+    <div class="blog-item rounded shadow-sm h-100">
+      <div class="blog-img">
+        <img src="img/blog-3.jpg" class="img-fluid w-100" alt="Postural Rehabilitation" />
+      </div>
+      <div class="blog-centent p-4">
+        <div class="d-flex justify-content-between mb-3">
+          <p class="mb-0 text-muted author-meta">
+            <i class="fa fa-calendar-alt text-primary"></i> 06 Oct 2025 &nbsp; • &nbsp; <strong>CoreMotion</strong>
+          </p>
+          <a href="blog3.html" class="text-muted"><span class="fa fa-comments text-primary"></span> 0 Comments</a>
+        </div>
+        <a href="blog3.html" class="h4">The Benefits of Postural Rehabilitation</a>
+        <p class="my-3 post-excerpt">
+          Think about how many hours a day you sit — working, driving, scrolling, watching. For most people, it adds up to over eight hours of sitting...
+        </p>
+        <a href="blog3.html" class="btn btn-primary rounded-pill text-white py-2 px-4 mt-auto">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Card 4 -->
+  <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.7s">
+    <div class="blog-item rounded shadow-sm h-100">
+      <div class="blog-img">
+        <img src="img/blog-4.jpg" class="img-fluid w-100" alt="How Online Physiotherapy Works" />
+      </div>
+      <div class="blog-centent p-4">
+        <div class="d-flex justify-content-between mb-3">
+          <p class="mb-0 text-muted author-meta">
+            <i class="fa fa-calendar-alt text-primary"></i> 06 Oct 2025 &nbsp; • &nbsp; <strong>CoreMotion</strong>
+          </p>
+          <a href="blog4.html" class="text-muted"><span class="fa fa-comments text-primary"></span> 0 Comments</a>
+        </div>
+        <a href="blog4.html" class="h4">How Online Physiotherapy Works</a>
+        <p class="my-3 post-excerpt">
+          If you’ve never experienced online physiotherapy before, it can sound unfamiliar — maybe even a little futuristic...
+        </p>
+        <a href="blog4.html" class="btn btn-primary rounded-pill text-white py-2 px-4 mt-auto">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Card 5 -->
+  <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.9s">
+    <div class="blog-item rounded shadow-sm h-100">
+      <div class="blog-img">
+        <img src="img/blog-5.jpg" class="img-fluid w-100" alt="Can Online Physiotherapy Really Work?" />
+      </div>
+      <div class="blog-centent p-4">
+        <div class="d-flex justify-content-between mb-3">
+          <p class="mb-0 text-muted author-meta">
+            <i class="fa fa-calendar-alt text-primary"></i> 06 Oct 2025 &nbsp; • &nbsp; <strong>CoreMotion</strong>
+          </p>
+          <a href="blog5.html" class="text-muted"><span class="fa fa-comments text-primary"></span> 0 Comments</a>
+        </div>
+        <a href="blog5.html" class="h4">Can Online Physiotherapy Really Work?</a>
+        <p class="my-3 post-excerpt">
+          It’s one of the first questions people ask: “Can you really treat someone without touching them?” It’s a fair concern — physiotherapy has always been known as a “hands-on” profession...
+        </p>
+        <a href="blog5.html" class="btn btn-primary rounded-pill text-white py-2 px-4 mt-auto">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div> <!-- row -->
+      </div> <!-- container -->
     </div>
     <!-- Blog End -->
 
@@ -326,11 +379,6 @@
                   href=""
                   ><i class="fab fa-instagram"></i
                 ></a>
-                <!-- <a
-                  class="btn-square btn btn-primary text-white rounded-circle mx-1"
-                  href=""
-                  ><i class="fab fa-linkedin-in"></i
-                ></a> -->
               </div>
             </div>
           </div>
@@ -409,9 +457,6 @@
             >
           </div>
           <div class="col-md-6 text-center text-md-end text-white">
-            <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-            <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-            <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
             Designed By
             <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
           </div>
@@ -435,5 +480,12 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+      // hide spinner when page loads
+      window.addEventListener('load', function () {
+        const s = document.getElementById('spinner');
+        if (s) s.classList.remove('show');
+      });
+    </script>
   </body>
 </html>

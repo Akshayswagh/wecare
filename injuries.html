@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>We Care Physiotherapist</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      /* Custom styles for the new content */
+      .physio-section {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+        margin-bottom: 40px;
+      }
+
+      .physio-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .physio-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .physio-card h3 {
+        color: #023e8a;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .physio-card h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background-color: #15b9d9;
+      }
+
+      .benefit-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+
+      .benefit-icon {
+        color: #15b9d9;
+        font-size: 20px;
+        margin-right: 15px;
+        margin-top: 3px;
+      }
+
+      .conditions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .condition-item {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .condition-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .condition-item h4 {
+        color: #023e8a;
+        margin-bottom: 10px;
+      }
+
+      .ergo-section {
+        background-color: #e7f4ff;
+        padding: 60px 0;
+        margin: 40px 0;
+      }
+
+      .step-container {
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #000000;
+        margin-bottom: 40px;
+      }
+
+      .step {
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        overflow: hidden;
+        transition: 0.3s ease;
+      }
+
+      .step:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .step img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .step-content {
+        padding: 20px;
+      }
+
+      .step-title {
+        font-size: 20px;
+        color: #023e8a;
+        margin-bottom: 10px;
+      }
+
+      .step p {
+        line-height: 1.6;
+      }
+
+      @media (max-width: 768px) {
+        .step {
+          flex-direction: column;
+        }
+
+        .step img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .section {
+        background: #ffffff;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+      }
+
+      .section:hover {
+        transform: translateY(-3px);
+      }
+
+      .accordion {
+        background-color: #f1f9ff;
+        cursor: pointer;
+        padding: 15px 20px;
+        width: 100%;
+        border: none;
+        outline: none;
+        text-align: left;
+        font-size: 18px;
+        font-weight: bold;
+        color: #023e8a;
+        border-radius: 10px;
+        transition: background 0.3s ease;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .accordion:after {
+        content: "\002B";
+        font-size: 20px;
+        color: #023e8a;
+        font-weight: bold;
+      }
+
+      .accordion.active:after {
+        content: "\2212";
+      }
+
+      .accordion:hover {
+        background-color: #d9f0ff;
+      }
+
+      .panel {
+        padding: 0 20px;
+        display: none;
+        overflow: hidden;
+        background-color: #ffffff;
+        border-left: 4px solid #0077b6;
+        margin-bottom: 10px;
+        margin-top: 5px;
+        animation: fadeIn 0.5s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .accordion {
+          font-size: 16px;
+        }
+      }
+
+      .form-section {
+        margin-top: 40px;
+        padding: 25px;
+        background-color: #e7f4ff;
+        border-radius: 12px;
+      }
+
+      label {
+        display: block;
+        margin: 12px 0 6px;
+        font-weight: 600;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: #15b9d9;
+        outline: none;
+      }
+
+      input[type="submit"] {
+        background-color: #0077b6;
+        color: white;
+        cursor: pointer;
+        border: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #005f8a;
+      }
+
+      .highlight-box {
+        background-color: #f1f9ff;
+        border-left: 4px solid #15b9d9;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .highlight-box h4 {
+        color: #023e8a;
+        margin-bottom: 10px;
+      }
+
+      .why-choose-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .why-choose-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+      }
+
+      .why-choose-list li:before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: #15b9d9;
+        margin-right: 10px;
+      }
+
+      .why-choose-list li:last-child {
+        border-bottom: none;
+      }
+
+      /* Animation classes */
+      .fade-in {
+        animation: fadeIn 1s ease;
+      }
+
+      .slide-up {
+        animation: slideUp 0.8s ease;
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0"
+      >
+        <img
+          src="img/logo new.png"
+          alt="Logo"
+          style="height: 100px; width: 150px"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+           <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >About</a
+              >
+              <div class="dropdown-menu m-0">
+                <a href="ourjourney.html" class="dropdown-item">Our Journey</a>
+                <a href="team.html" class="dropdown-item">Our Team</a>
+                <a href="FAQs.html" class="dropdown-item">FAQs
+                </a>
+                
+              </div>
+           </div>
+
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                <div class="dropdown-menu m-0">
+                  <a href="physiotherapy.html" class="dropdown-item">Physiotherapy</a>
+                  <a href="injuries.html" class="dropdown-item">Injuries We Treat</a>
+                </div>
+           </div>
+             <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Fees & Packages</a
+              >
+              <div class="dropdown-menu m-0">
+                <a href="appointment.html" class="dropdown-item">Appointment</a>
+                <a href="feature.html" class="dropdown-item">Features</a>
+                <a href="fees.html" class="dropdown-item">Fees & Packages</a>
+                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                <a href="404.html" class="dropdown-item">404 Page</a>
+              </div>
+            </div>
+            <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+             <a href="blog.html" class="nav-item nav-link active"> Blog</a>
+          </div>
+          <a
+            href="appointment.html"
+            class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0"
+            >Book Appointment</a
+          >
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+      <div class="container text-center py-5" style="max-width: 900px">
+        <h3
+          class="text-white display-3 mb-4 wow fadeInDown"
+          data-wow-delay="0.1s"
+        >
+      Injuries Physiotherapy
+        </h3>
+        <ol
+          class="breadcrumb justify-content-center mb-0 wow fadeInDown"
+          data-wow-delay="0.3s"
+        >
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Pages</a></li>
+          <li class="breadcrumb-item active text-primary">Services</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Types of physiotherapy Start -->
+    <div class="container-fluid service py-5">
+      <div class="container py-5">
+        <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="sub-style">
+            <h4 class="sub-title px-3 mb-0">types of injuries that can be treated with Physiotherapy</h4>
+          </div>
+          <h1 class="display-3 mb-4">
+            Our Service Given Physio Therapy By Expert.
+          </h1>
+          <p class="mb-0">
+            Expert physiotherapy care to relieve your pain and discomfort –
+            helping you return to what you love, quickly and effectively.
+          </p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.3s"
+          >
+            <div class="service-item rounded">
+              <div class="service-img rounded-top">
+                <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtzLX2zWSstuGa4rMaykt35neoFUGO8luvsQ&s"
+                  class="img-fluid rounded-top w-100"
+                  alt=""
+                />
+              </div>
+              <div class="service-content rounded-bottom bg-light p-4">
+                <div class="service-content-inner">
+                  <h5 class="mb-4"> Sprains (Ligament Injury)</h5>
+                  <p class="mb-4">
+                A sprain happens when a ligament (the tough band that connects bones at a joint) is stretched or torn.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.3s"
+          >
+            <div class="service-item rounded">
+              <div class="service-img rounded-top">
+                <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsI3BvIpH_cSP_7rcW57eRhTBBRdvganskZQ&s"
+               class="img-fluid rounded-top w-100"
+                  alt=""
+                  style="height: 230px"
+                />
+              </div>
+              <div class="service-content rounded-bottom bg-light p-4">
+                <div class="service-content-inner">
+                  <h5 class="mb-4">Strains (Muscle/Tendon Injury)</h5>
+                  <p class="mb-4">
+                  A strain occurs when a muscle or tendon (which connects muscle to bone) is overstretched or torn.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.5s"
+          >
+            <div class="service-item rounded">
+              <div class="service-img rounded-top">
+                <img
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSEhMVFRUVFxgXGBUYFxcXGhgVFxYYFhcYGBgaHSggGBolIBYVITEiJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGBAQGi0lHyUtLS0tLS0rLS8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAAABwEBAAAAAAAAAAAAAAAAAQIDBAUGBwj/xABDEAACAQIDBQUECAUDAgcBAAABAgMAEQQSIQUGMUFREyJhcYEykaGxBxQjQlLB0fBicpKi4TOCskNTFRckY4PS8Rb/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQIDBAX/xAAkEQACAgICAgMAAwEAAAAAAAAAAQIRAyESMQRBEzJRIoGxFP/aAAwDAQACEQMRAD8A6bKptpqDzHSqmTBqeDEHxqSImT2SaHaqfbGU9R+lWcZmN5tivNBLEDlZ0Kq51GvJvDx4j4VwPF4d4naNwUdCQynkR8/zr1OmGJGjAiuZ/Szuwjp9ciX7SKwlt96LgHt1TT/b/KKUlo2wyp0cv2Y6h7OLo4sf1q9w+FW3YSag/wCm/AkW4acT4eoqiwK65TxB0P51cO4yENpbkOo1BXoa5J7PSx9bIeHw7CUpY3GpFrHLrqOtbDY2OfDyCDEew/svxHmPzFZvYe2gHIkN3ZQiObW48CfXj51p9oDPEU45BdTwsVGh89PjXRGOjmnKy/xa8ASMvG3U+HWqreXaGSNFAuWYHL4D2R77U/hcVnw6yE+youfAcaqcFDJiZS6i/TjoBw8qu9EVss9jmUKDPIMPHyjQDO3lbW/vrQ4PaB4YaAr/AO7KCWPjrc0nBbCmXXtI1PM5C595YVM/8GmPHEn0RV/WkAtMIW70zu59w9LkU8sKD2Yk82P+KjrsIffaV/8A5QPhlpRwUSa/U5JPHtFb4XpiFu1v+lhj6ioOLRXGuFhvyKOUPvWpYmUg/wDoQLciwBt4e/4VExMcTkD6k4vxZTw92poGV80uRSjwTFOhkEoHlcZvjWLnYKShJK3OUtocpJOVx1HD41uDs+MNlDNcmyxKzljprcEi1uvCpuH3RSQfbqjDkuXUf773v5UAYXZO38ThAwhkcI3FQRdfFMwI+FPQ7T23iWH1TGyyIzWLFVj7PrnIS1h1Hure4HcfBxm5RpOgdiwHpz9b1qIYwoAAAA4AaAeQ5UCKTZe78vZKmJxMkzj2nJuWub2F9FXhp4Vb7L2PFACIwRckm7O2p4nvEgelqlA0otSUUinJtUOijLUx2mlF2moFMkdL01KaYw0wa7HmSPQaUqd9fKgB3AYzvGNuP3fzFWNZrGmzKw05jzFaKKTMAw4EA+/WhALoUVCgA6FFQoAOhRUKADoUm9CgCJ2annSJMMltdabOH6GiBceNUcxGbD2N108KjyRggq6jUEEciDoQfA1Z9qDxFqRLDfhrQKjz1vrsMYHFFAD2TjPEfDgy35lTp5ZTzrOYmckg13/fXddcZB2ROV1OaN7ey1rWPVSND6HiK8/bSwkkMjxSqVdDlZTyP5g6EHmCKycKZ1wyuUaI7m9Xux9vsAIpTdeCseX83h41QiiYU1oZ1bdcB8M0bcD3T5HQ299bPZsCQoI41CqPefEnmawe50v2LeV/lWnwu2AQCQNemtCEaRJacE1VUWNU87edSY5AeBv4imBOEtOrJUFeOgPnwqZh46BEladSEdKa7ZRVfi94EQ5SwB42HSpc4rtmscM5dImQbGiR2kuxZuJY3IF75RpotTUjXkT86r9j4h5WzmO0eXRjpmNxbKOY468Ku4/AAVUXasiUXF0yI8ZFBTUiQa1GfTy50yRZkt5nhTbtc5feaZ7TW448B0HjQicWNjx4n98qAJKNc35Cok89g7X14D1/xRYrF5ImckAAE8P81DlJESBtCRmYeLa/AWoAn7LHdUeZNIZ++3hT+AsEvpw+dQom7zUDF4rWK5+6f386s9gzZogPwkr6cR8/hVOWuko8AfnUrdaTSQfyn/kP0pewL+hSaMmmIF6F6KipgHQvRUKABQoqFAETtetH2lIoiKDmFMwpooOWlA0pTTAHe56jxrj304bOW8OJUAMSYmtzFiyeosw9a63jmJWyEA/lWa29sD6zC0Mqko2txxVhwZT1H+KTHF0zznejvUnaWzpIppIWVi0blDYHWxtceB0PrTuF2JiZPYhfzIyj3tas7o6km+jZblzfZH+T8qPdPGDs8jH2XdRfkM2nzqRu1u5NGgWRlXS1hdvjoKvtlbqYeK5sXJJYlzcXOui6D4VPNIv42yRDIwYAKWB6C/v6VYDAObMhyMOvA+YHEVJjKqLaCjk2iijjUvKXHCTFi0BbUj0vTT48KfCmcHjM/Ag+FNbSwebX31m5Nm8YRRHkxEk8ixRHVzxN7KALsT4AW9bCtPgd3IU1dRK3NnAPuFrAfHxNZjd+QQ4lcx7rK669WKkf8T8K3YN/3yrTDFNW+zPyJtPiuh5RSWufAUdG7AWFq3OQjzTgA2DN4iqmeVg2pJBq8Y6cMo/fKq6dUa9iL+H71pMZRY7HmOyAklzf/by1/fCpP/iGVdfCom14bqH5xnX+UnX8j76y2O28pD2OisB8DSsKs1u18SrRIOIaSMEdVMigj3Gn8ZJmcjkD+dYxtqZ4Y1B1YaAfizaDzvatfFMXnC8wAW5jNbUX86d2BdR6RjlcVV9oBfzq0xpFreFUMrd7pQwJmFN1mPgo9wNO7sS/aEdUPwI/zSMLGOyc9WPwApnYL2nTxuP7T+lL2hro196F6KhVkh0VFegTQAdETRUVACr0KTehQBHKU2RT96MinRykU0lj6VJyelRMdjIYFzSuqDxOp8lGregpPXY1bdINbdP1omIW5JAA1ueQ8SayuO3zZ2yYWMC+naSfMIPzPpT+EizZWmkaVxqCx0B6qg7oPja9c78mCdLZ1Q8LI1ctf6Vm8eHXte1XVXHGxtmGnHxFvjVerAVuBIp0qBidlwNe8YF+Y7p+FYOVuzujDikjNfXQKbl2sBzo9sbtSgFsO2f+BiFY+AY90+tq5dt7aGLjcxyq0BH3SLEjrc8R4inGLkEpRj2bfaG8Sg5c3ePBRxrM7zbWnQqAQAdetUWyomXEASBla+oYEHUX1vrWm29sx8VkMABAFrk5QeOo6jxraOJIxlnb60VGyd7Z4XBJzLzHD3V1jYO8ceIUa6kX865Hi91cXHYtCzA2AKd+5PKy974VIwWAxuHs5w86ITYZo3Tvce6WAF6cofgo5P067j41tY214X8eHlWn3axYkhB5qSreDDiPzrm2x9vFVyYhSwPUcvEV0HdRo+zfs7atmNvECxPjpb0qcVqVGmZpws0CCnVXnTcdO3roOMSyiqzaGHQ/d9xtVrTGJiuKAMnmEmZG4OGU9bG6++1cm2Zgy8rxT4jDYcI7oxll710OUkIBfU3tciuvY+Ao/Dje/nWS2v8ARcMZLJiExCoZTfszGWscoBJYOLXIvw51NFXQ7DsbD4XK8UzTtlurkAIuYe0gHhzvV9usyu2YX04mqyLY1yFNrKAosbWCi35Vo8HGsS5V08qaE2TMY976+n5VQYl+8NbVcO2mv7vVBi5BnHrQBf7P/wBHzLf/AL8KrcC+WVDws492bWrPAr9gvSxPxNUZN7+tKQ0b4mheuX7qbdnhLRzZg8LZZYjzH4hyvwII0Nx1rpqOCAQbggEHqDqDVWSKoXoqKmAq9FeioUAHQpN6FIBK9P3/AJrP7d32wWFPZvKHkH/Sjs7D+bWy+pFUOK3kllkdVORI0Y5RzbL3Qx56lOg1PSp2I3PwrRJC0arJKoDSogDAxxGxv52PieNDba0Y44J7ZndpfSRNJcQqsK9fbf3nQeg9aoE2hna8jEs33iSSfMmou3N2J8JJ2blG0BDKeILFQbHUG44eNP7m7vjGyOjSMmWLtFygEk3AAN+A16VyzhKemehjePHuJdYFdLga1cQs4Fqxe7W3MrmGU2IPdJ5/wnx+dbKLGKedcM4OLpndCamrRLTFkcaeXGVE7YGmr61PJodJlvHNehjcHFOmSaNJF/CwBF+o6HxFVsctSY8TWkchEoFBtjclS3aYbsw3NZFzXsLACTiugHEHzFZDauJxmENps0ajgQthbhoRodDyPWurLPS5ArqUdVZTxVgGBHiDpXTHN+nPLAvRn9yNoLiYihdWOXMpB6H3qwsdOOnlUnfXHmXCwZjd0nyMetkJVvUH3g05gN18PBL22HBhJtmRfYNv4TwOp4e6q3fXBT5c8MTTDMGZUtcFQ2U24n2mGgPGuhZE0crxSixGysPhGjnbFyCNI1BEt7FGJPD8ROnd1vUb6PNtR/WQI3ukmZCD3eZKsVPAm391c8KzYmYJIGMhbKsABDBjyCHUHxNdF3L3R7HFqMSoLpqEGoQkXBuOLDT/ADVCvs6whpyoeEluviND51JU1ZA6WpIFGKM0AVO2cNmQkcV18wONJ3dn7rAC9iDxFtR/irGMa1GweG7OV8vsstx0BB1Hxo9gZzEzqk8kZ0YMTa/I94W66EU1Jjb8NbfvpUzfnZSkJiwcrxdw/wAaPoB5gm49azeHlJPP1NSyqNF2pK3uNRwqhxz/AGoH76VZM9lBN6ou0zTeA/WmI2cLWw62/D+ZqmC1cN/oqP4BVPUyKiQN9o+zxWGxI9nERCN/50AK+pVv7K2W6mJzYcLzjJT04r8CB6VR754PtdlBx7UGWUHwjJV/7S3upO4eNu2XlIlx/MuvyLe6qRLNteiJoGipiDor0KKgA6FFQoA5NuxD2kGIzgt2giS/jLMoJ04exetPi99cJFPkd2+z0LBbqL5he97kcOXKuaQbdWLBmBsys7KWK2uOxY8L8Dcgj0qj+uhiZCtgAFLA5QV10sQbtqbgfi0AqW6M8Ef4I6b9IuMieSLJIrExBrBge7mDq1uhynWqr6OH7LaDLdRdJYxmNhcSqR5my6DnWKwGNCv9XV2IJJYMPvBGC2IOlhV8gi+uI0zAR50kJJsNY0ZT5Zx8aV+zavRQb6YTs8ZiI+kjjpxa405cRVvuntTDxYd1xQldi94niZe6oFmU52ta44a8TqKjfSO2bGyve+bK1+GpRasfoixB+sTA2YmIMCwBIKuB3b8Pa5Vm6a2aRbi9E/Y+MknfJBHK172OW4sAT3mvlXhzPzqzmmkiNpkaPpmUrfyJ4+lbj67J+L0pLYlzoTcHkdR7q55YIPo6o55rtJmLXGA0tMXVzitiwPc9mAeqdz4DT4VXybtfglYeDAN8Raud4ZLo6Fmg+xK43xqZFjaxj7URWK5wbEi9iLkcbA66HTXpTkW2F/EPXT50uE4+hqWOXTN0mLHWpEeKFYqLafjUhNqeNNZGg+KzV4rCwzEdrGjMpurEd5SOBVx3lPkafTDt24nD3OlwQOWl7i3751l49rVYQbaA51tDPRjPx79FruzPix2n1xRn7RrOpBR42OZSBqVIuVsddBx41pkPSshFtm/CrLCYsniBXTHyEzml4zRoA9OjWqFsUoqLPtIDQVXzIleO37NE7henvtTRmvwYXHQ8KzD7WVQSxAHnaoH1yaRg8UcwAOjCN7EHjY21HwpfNfSH/wA/6yZ9IGORYUQe00gve57oVjz8bVm9nz8Aupp3e3ETSgLLA0Zjyssp4Sh7qwtbulTl0vz5XqFstbcRxHGru2ZVSoutpT2Qn961UYdu+x5FR+705tXEd23j+/Sk4awS50NrcPW9UL0brEf6YHDuAfCqVDVhiz3fG1VifKlIIjOP3v8Aq6vh3wzyoUYXUaHPe6lr25nlWf3H2gURG4mFgSOo4MPUXFaaR9ayP1uOLaDxXt2oU2tpnI1HS5tf/dURm3LjRbglGzpp3jX8NIO8g/BWYgk7oFicvdOnTQfC1K7T+E+6ud5MqZsseOrNEd5f4PjSTvGfwiqAyH8Joi5/CaXyZh8MZe//ANK34RQqhzH8JoUc8wcMZzLeEzdtIYoJGAtclCU4LdrWsb2GpqqwM4YsWDIbZCQbr3iFvlY92xI4Gw6V3jF7GDoULEAgA5QAbDh5aAD0rN436P8ABqkjyNIqm7Oc/MkHTTjcCwFd3FnnLJFJJHK8FhZBOr6ECQKxU3sbEG/McOdavCor4nDh1DArGCDqCVzqL+oFJxGzE73ZhlUzJLdiC11Vl1ygAZs1+drU5GgieOZ3AWIhiSCbAOWNgDrxItUuLNlLdkb6SgfrAJ4lF/MflUX6NJCMbYc4pB/xP5Uvf3bMGIlRopFcBALjMNQzHUMAQdR1qP8ARvIox8ZYgArILkgDVDzNTXoq92deEj9RR5n6/CpKIDwIPlrSMVIkaF5GCqOJOn7NHBD5sZGfrWU3m30WAmKFhJN/ah8be0fAetVW8m90k14sNeOPgX4Mw8/ujw41z3avckUoSO6CG4X1Oo8KOCDmzQYJpcTJkD9rI7ZsgIAB5k8LADlwFqbbDGMyBrZo5GB81Yg2PTSsyJO9ck3uDe/lc+daHYLl0lzEseNyb8ePHjTaEmdjk2XG47yKb68B59KrX2ZFFOncBSUMCG7wDra1r8Lgn+mnNxNlYiKFmxM5m7XK6LmZ8ikX9ptbm404C1T96IrQdoDYxSRuP6grD1Vmp8UJzZktt43DYR2E0bsGbuZCRYW1HEdL+tQE23g5BdGmSxAOax49Ovvq53v2SuIbD3OUF1ufDmPXUeZqwxW5mDlWwiEbXuDH3bnlccKl4oP0Ws817ZmUx6qwyy5h5ZT7rn51qtnY8kAE1Tf+XwZbrPY6ghkuLgkMND5e+nIdk4jDIHYq6CwzLfhyJB9165suDjuJ14vI5/xmayIDrULGp+HiT86YwWODCpRa5HmD7qhSTRbi0ybuXsYMgxUozvJ3lza5VPsgDkbWrZLVfsZQIIwvBUVfVRlPxBqaTXfFJLR50223YjF4VJUKSKGVuIP7086w+2N2JYiWiu8fhqy+Y+8PEa9a3Smlhqpqybo43jDci/L98anYaPNlA6gfEV0XaGwcPOc0kYLfiBKn1KkXpEW7WGW1kItw77cvWp4jbKLGtUSNbitViNhRNzceR/UUeE2LFGcxu1uGa1vO1tfWigT0U2z9mPJray29o8PTmag7Y+j+OWWPEdoscsZ9rKWzKAbAjMBcX48a0+0drLGKzmJ2u7E6kCpcoopRkxjD4YpI8bWNwGBHA27pI/tqV9XquXFfaob3ysFb/fpb0up9KvbVS3sT1oh/V6H1cVMtQy06FZD7AUKmWo6KCyxVLmsPvPtLtZMin7OJiP53GhbyWzAep6VpN59pmCA5DaSQ5I/AkElvQAnzt1rAxLlAUC4UAcb++/P1q2zmxQ9iJIf3b9LVTb2G2Fa33mVb/wC7MfPQGrwte/UfpyrKb64gExRa3F3I1tY6Keh+95WPWpfRulsyJSk5KeYUioLoETFTdSVPVSQfhUqXaU7ABppWA4BnZgPIMbVFoXoCixwO1mR1aSNZVU3yNdQ3mVpze7bX12YTCIRBY1jCBswst+Byiw14W5VVhqO9AURwhLAdSBWk3V1Eg8Ko7Vb7pOBiBGSo7WyBmNlDa2ubaXvb3UMDt27OKR8NCFdWZYowwDAlTkAswB0OnOs99LG0jFg1UcZJVHoh7Q/FVHrU7dLdJMEXmZy0si2fXuKL5iF0BPAanpyrG/TJtFJGw8aOrAK7HKQdSVUcPJqr0SX8MnbYFHU3y2tzIK2Iv41c7Dxoa0tycwykcltobetV+7yIsXYIQymCJwwIK3y5HAI5gqTbxFUmzNoGGZ4SbBj3T0PKgDdY18rkDhJz6Pa1vNh8qnkDLawK2sRytbhVVCO1iEZY5rjvc7jvBvO4FOYLGFgUbRw2Vl8eJI/hIFx50xFLiNhyIM8ZzLr3fvAg2tb7370qFNtGRAA8TofFSNOtjqK2q6ofHN8zWB2ht13+0caZ8uW1so4eZ1FcOdY8bV+z0fHyZcidJOjX7o7YuchNw+q+DAd4etr+YPWtl2lcoiwxIEqmzAhlZTpcG4+NuNdKwc2dFf8AEoPvF66MVpUzlzOLfJEwmjU0yGpxWrUxHlalZqjNMKh4rHhRQ2FWScVjglZ3G7aZictRsdtEtpyrO43bkSMIw3aSE5RGgzMWPAdAfMisJ5G9I3jBLbLWWTMbsb/vpUrBYLNZmvbp1/xVbsvCYppFeSOOKMa5WOeQ/wBPdX41pb04Ym9yFPJ6iYqOER4rE4e5s57ZePsy3Onk2Yf7a1+Dnzor/iAJ8+DD3g1l9+nOHMeNCFlQGOQAgGzMOzOvK7MOftCpe4+2BicOzgZcsrApe+W4VhrYXvmvw5kcq2MTSXoUnNQzUwDvQor0dAjG7Y2j9ZxLMD9nFeNDyNj32HW7ADyQVAfEC9hqfkKiYmURqIkvoLceNqKFWA5Ennw1NFgo0icBYAdT+/34Vz/eTFdpiZDfRe4PJdT594tWyxuOCK8jXsinTj4W+PxrmqyaeNJspCmNJopTY2pOapGKJor0gmhemIXehekUV6AHQ1GTpTWalLSKO44zFPiNj9oMzPJh1LBeJNgJALczZq4+mxsRIrSR4eQonEhTp+Z9K7D9G02bZ0HhnX3SNWmvVUQcp+jiKaJRK6FYzKIzmBXR0JzC411Cj1qfvJslnlcpfOq5wBxIU94Dxsb/AO2t5tPC9rE0YNi1sp42YEFTbzArmG6e8c8m0ohiWvfPGFsFCyZWXlx1BGt/aoaA0Oxdu6LITqgIZfxaaH1t8aumdZHXFRjviOzZe8SCbhWtzGtZne3ZLYaT6xD/AKbHW33GPX+E1O3b28hJ4KxtmW+hsLXFJP8AQNbsjHLLGCp1HEcwb8xVfJsCCW+cEd8tYMQDc3Bt61ElwedRiMM3Zy2uRwDeDDr40jA7yqG7PEoYXCgEkaG3P48aU4Rn9lZUMkofV0T5cEsS5Yx3FsMvGw0N7++tRsFwYV8Lj3E1QxYyJicsiMCv4h4/rUjYWOQLJGHVijX0YEgHhe3lTpLoVt9l7JKLk1BxO0gOdVWO2mOAqnxGJGpYgAakk2AA5k1lPLXRrDHfZc4rbJ5VWNji59qs3jNrCWyoe5xzfi6elTMFJ41KTl9im0vqXJQEEfv/ABVJsfdCKLGLilJIGYiM8A7C1wb8BdtPEcLVaxTCpsEtbRSXRlK32W4oXpqHE2qXFMrcR76uyCp29gPrGGmg/wC4jKP5rXQ+jBT6Vzn6JtpZJZIHNu0UEA6faRm1tfvEMdP4K7B9XU8PnWHx30W4e5aGaaJ73UkiRQ4NwxuM3HoaANWDQvVHutg8RBG8GKYyOjkrLcsHRxcEE66HMLcvdV1egQu9FRXoUAcpw175iTc08MTzvw+fLWqxsRyU6dOPzqNiscEXMeXLhc9Kz5GvERvLj7RrEPv6sPAEEe8/KsuDS8XimkYsefwHIUyL0ybFZqLNQCUMlMQM1Fejy0eUUAFmoXoZRRUAHSgaRVpu2o+swki4WWM25e2ONIZ2jcrANh8FDE4s9izDozktbzFwPSrsyUyzU08lzb3/AKVZBIEvOuNb3RHDbRkdBYrIuIXyazn+4MK640tcW3vld8dOzk918ug0CABVB9LeppMaO1R4iOeIMMrxyLfkQVYcPyrnW827MmHYyw5ni46XLJ59V8ffWWg2vPFGEjmkRAb5VYqLnidOtOYTeLFxSF1nkNxqJGMinzDE0PYFzgd6JVXKSGBFr8CB5irXFb4RyqqywBwp521FiLX4jl7qxWJxPbPm7sbHjlGVSevQGo8iuOYNTsei+x20Yyfsoyg6Fy/uuNPjUHDbbkgftImytwPMEcww5imMFh0YXmnMf8IjLm3gQQKusBjNmwEMIJ52GoMmQLfrlzW94NFWOzYbrT4jFL2ksXZJyYk3fxVSBYeJPvrOfSNmWdYgzdmY1YLfTNdgSbcToPKpU30lNwTDKByzSE/AIPnWZ3g3hkxbK0iopUFRlDcCb63Jv/mp+OK6H8kn2XuzdY4z1RT/AGipoxJB8qpNlbajWICQ2KjTxHK3yqvx+8Kn2AfM0UVaNc+2AvE1Gbe5V51gMRj3biaagRmYBVLN0ALH8zTSJcjpeH32j+8bDrWi2XvPDJokit4Ai/urm+D3UxkwFoGUHnJZB7m73wq7wP0ZvcNLOqeEalj/AFG1vdTaEpfp0F9vxr7TZfPQ+flTEu9cKjRwfUVRYf6PMGPb7WQ8y0h1/ptV/s/Y+Hg/0YI0PUKM39R1Pvo4y/R8o/hTYLbeInxkeWGUQDOHkZSiksvdIzW0BArWXppzcfvjSle9UlRDdi70KTeipiPPcm15Dwsvpf51CllZjdiSaRQqKLbbDApQpF6FAhd6LNSaOgYL0KFCgAUuOIngKSpt09alYaWhghZwWWMuxv0HK/50/uz/AK6fzIfc60vGH7A+Y+YqJsaNzMgjBLMwA5XNwbX91TF2hvs71K510NRWlIHAk8/Oi2eJVhUTsGkt3mHnoL8yBYE86r8ZOQapyYKKJqYpvwMfd+tc13i2wyT46IIAJ2UMSdbKEI8DqLjpfnW4w2K8aqdpbCw8sjSurMzWv3mAuABwFugpcr7Hxro56T3P31p2F73GnGt7BsaBdBEnqM3zvVlhsKq+yoHkAPlRyFwOcxbPkb2YnPkh+dqlpsDEHXsiB4lR8L10oCiAp2Licxn2ZIntAClbO2QZGsWt7h8TW92lgQ4rLy4YxtfpU2y1GJZYLcuP7yl/OfL/AMIx86sZN0IjGyJBEjMCA5lkcqeRGYUzsfanAE1pY8WLXJqkyao4ztHBMrGNhldGIIOlv8cD5GowwfU+6tbv3j4pXHZp9ouhk4XXoRz8DWRzN0qLrSHQDEoOnxrqv0f7GeGDtTZWmsbFdQgvlHEcbk+orNbh7Gw8rZ5nzuuohIIA14sfv+VdOElNAwdnJ+Jf6T/9qHZv+Mf0f5pQejLU7YUJ7N/x/wBoo+yb/uH+lf0o81Hei2FBdkf+43uX9KCQ2Fszf2/pRk0A9FhSB2X8bf2/pQo81Ci2FI83XoXoUKozBQoUKABR0KFAwxSgKOhSGC1BTY3oUKSBljiGvCfMfOr7cKG8sOnAvJ/aQPkKOhULr+yvZ0t3qo2gaFCqBFWktO9vQoUih1JD4VJjlPhQoUxElXpBfjQoUMSErJeoG0cMCL0KFAyitlNTp9okJa9FQqWykZrFC5vTIiFChWFmpL2ZMYnDDQiumbNxmdAeoo6Fa42ZzJiPSi9ChWpmH2lAPQoUDDMlAvQoUAF2lChQpAf/2Q=="
+                 class="img-fluid rounded-top w-100"
+                  alt=""
+                />
+              </div>
+              <div class="service-content rounded-bottom bg-light p-4">
+                <div class="service-content-inner">
+                  <h5 class="mb-4">Fractures (Broken Bones)</h5>
+                  <p class="mb-4">
+                A fracture means a break or crack in a bone caused by trauma, fall, or accident.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="service-item rounded">
+              <div class="service-img rounded-top">
+                <img
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFhUVFRAQFRAVFhgQFRAVFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGi0lICUrKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSstLS0tLS0tLf/AABEIALYBFQMBIgACEQEDEQH/xAAcAAAABwEBAAAAAAAAAAAAAAAAAQIDBAUGBwj/xABBEAABAwICBgYHBgUEAwEAAAABAAIDBBEFIRIxQVFhcQYTMoGRoQcVIkJSscEUYnKS0fAjM1OCwqKy4fFDY+I0/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQIDAAQF/8QAJREAAgIBAwQDAQEBAAAAAAAAAAECEQMSITEEE0FRFDJhQiJx/9oADAMBAAIRAxEAPwDt9+CTfgiuN6APFNQli7qLRjN3d8ypF0xR63fvaUrGRKKLNAlFbmiYPNDNJuEAFqBYpQpNZ5qYocus81PLwNDkSgiugoFKDQRXQWNQCkyx3RqvxTGmsf1LC0yhrHvGvq2uuGkjedE25eNcTSuzaW3SH3U/NQ6uHLLWqqple/tPceF7D8oyUGSEbgufJ1KT4OmPTOt2aCieDFllfWDlbgjGoquwyo9nRJzBtffuKkSVFlbUpJNEHFp0x2PXbknqgdnvCiU0wJ17reakyvHmsuDNBSOAaScgASTuAUMytcLtIIzFwbqXPa1jaxFjtuqqqoI3Zhuicvab7OrVkMjqRkBEwv8A4bs9luV8kTGar5m2Tdw3k7FlemeISx0Mjx7DxLT6Lgb3tKx2l5aloujmKsrKZk7bDSyewG5bIO008No4EI1asye9Gp6PO9h34voFaqswEew78X0Cs1SPBOXIFErtbPxH/aVLUWu1s/Ef9pTR5ADEex3hVJVtiHY7wqopGMg6TtKxrOyOar6XtKfXdkc1n9Gb+iJdBIuguYctrncivwRWRW4ldxy2KTVJrd+9pS7pFMcz+9pQkNF8ki6K5SboFGgWKuUVyk6KMBYAu6hy6ypN1FkOZUsvBTHyJQQuhdc5YCCF0FjAWTk6GNFbNXMmk05mgPhOiWOLWtDbG1xbRG/WVq0SKMnTsyV7ZJEoTH20OnniLgXxSOuNXsvc4sNuVx/apDTdc+fGehinasi9YWm/ilGq0iUKmHIqBRHXzS4JutJPPDey0Y65t33UuEku16lBhVlA2wXZFHKxckiidddHO5MWyKEmFIpulNK2eGOJ5Oi6VpNsiQ1rj87IsGw5lK0in0maVi72i7SI2kOuEnEai80UfwskkPNxDW/Jyn7FzZZy4TOrFCNW0bLobVSPY/TAyIs8CwdcHZvFvMLQrM9B57skZucHeIt/itMu3E7gmcOVVNoCi12tn4j/ALSpSiV2tn4v8XKq5Jh1/Z7wqshWtf2e8KsKRjIFJ2lOr+yOf0UKl7Sm4h2Rz+i38G/ogIJKCgOW10RKRpILuo47IprdIlsQ0iLjS9xp3F23PYLpBdKI7M/mOboh3usdY3ceAOzapSEG397ShJcDQ8jFLM9gayY3dYDrQLNeeXungpwKbKUEWLYq6F00+do1uA5kBF9oZ8TfELUax66jSa0tlQ1xsHAm17Agm29Nya1LN9SuLkJBBBcxcCCCCBgKLida2CGSZ/ZjY+Q8Q0XspSpumVJ11DUx6YZpRP8Abd2Wke0L8MkVyA4PhPSaQVr62U5SOcJR9xx1AfdsLfhXU4aoZOBu11iHDMEHMELicdDJPLHSQN0nF2gBq0nHtOJ2NGZvsAXasMwqOljipmOLurZoueT/ADHXu4gbBcmw2CypnhatFemyU6ZY6dwoD4g0kjUc+Snvbkokrl58v8Ss7WtSofpWqW6TJRoiA0FNukuutSpHE0PE3SZNSJrkmV9gjZirfB7EUuvTlrGg/dj6mO1/xMk8U7I6zVoekdI1lJShgsAR4vYXE95uVmp23FlzZ1UjqwO4l50EqrTlvxsd4ix+QK365bgEnVTRv2BwvyOR8iV1JdPSyuFejl6qNTsCiV2tn4v8SpaiV+uP8f8Ai5dS5OYVX9nvCrSrKu7PeFXFIxkCl7Sl4j2Rz+ii0vaUrEuyOf0W/k39FcgiQUBx9kTGG7WAEXsQPizP0SzUn9hN4e8loafdaxt95tt8k85q60tSuznk9LoR9oP7CLryP3xRliosCxN88lQHAARSGJrc72BIu6+9BxZlLkvDVnj4BAVZ4oCNMsqoyS25uPBLKo8saKlLhCKqCOX+ZGHXLTmNreye5OfZ4zrafE/qpHVhGGp1C/Ijm1tRHgpI2v02ts62jpZ3tu5KS5GAiKTLGojY5WwIII1zlgkEEaBglzP0u9KCxv2CHtvDXTO+FpILWDibAnhzXTF5+9JE3V11Sb3e5+W3QYGtA7zbuCrhSctxZPYvPRhhzYY5qo5yOJp2O3ZB0mieZaL8CtTTQl7tI7M1XdEMPcKSnjtY9W17h96T23X73eS0lW0RN0RrTy3dvgpHZUiODko1QE/G0gC6TILhcGeB3Y5WiLHIbaPeE9GEyG2IPGylALYHcf8AhLMqYAmal2Secok5uVRsmjR47pPoYn3FmmI+RZ8ysyW3W2pqAy4ayO1nPha8A5WebSAHdnZYqmO8WIyIOsEawUOojumU6aX+WhxrVusBq3ywtOkLt9g313G3wssTZX/Que0kkewtDhzabf5eSn00qnXsPUxuF+jU6L94SZWG13WNsxw2KQkTdk8l6aPPGaw+wOYVeVPrOwOYUApJcjIOl7Sk4l2Bz+ijUvaUnEuyOf0W/k3krUEEFAcsI4w0W5k8ykXRfaX/AAhJ69/whdiyJHM8bbsWq7D6ZrZahzWgOc9mkd9mNt8z4qd1rvhCQ0uBJDRnmeKDyIKxtDtkiOBoAyHPmj65/wAITL8RAyLoxwLgPqllKMvAYxlHySWiyAcksncdQaUOsd8IWjNRVAlBt2LCDkkSP+EeaF3E5hLkmpIMIU7FBBHZCyjRWwkEdkLIUayl6X42KKklqDa7RosB957smj69y83QxS1tQAdJz5pA0nWS57rE+d11T03TF7qeDS9gB87m/E4nQZfu0/FVnopw5hmfUkXEI0WN/wDY8EX7m3/MunHGo2xG7Z1CCmbAwAa7AAbrZBQZI7nTcjnqiTfRKhyOe5BsokFVVN8gkNN0nqTuSg0jNRyRctzoxTS2GZmqXDYtB8eabe24TdK/RdYmwPkVx43onT4Z0ZY6o36FTFDDMPM8gZYlpI08sgz3r8xcd6g4pXENcYgHvDXFrSbNJAuLnco/oy6ZgtlZUTsa972yMDvYbYttotOoWttN810whqdnHOWlUdgCwnSeiEdQSBYSjrP7tT/of7lqGzy8PmqrpFTSSx3td0ZLxYZkW9oeHyCrk/0hMUtMjNWVh0dl0alnHSZ4g287KBEbi6NjyxzXDW1wcO43XB9Jpne1qi0dLSJdRVayolIBByIBGQ2o3Syr09R5lEqt7A5hQClSSyEWPyTLnHcg9wodpjmpGJdkc/ootK11+yVLrh7IG290a/yDyVqCXooKA5Js7j8kYa7f5pkPShIEvffop2kQMaxuGlA62UaR1Rt9p546O7icllMY9JMcbf4LXOefjyaO4G58lzXpVjhmq55WuJDpHBpv7jfZbbhYKgnqSSupcbkGanGOm9VOTpTOsfcadFvgPqqT1vJ8Z8VUmRJMizYKNNSdJpmEHTdcajchw5EZhbDCPSLMLB7w8ZZP1j+5ufjdcpa7altmK1mPS+F4x1oaHDRc4aTSHiSOUWuTFILaVtxAOWq2asS47yvPHRrpS+mNjd8LiC+HS0c9j43e5INYIt9R1jA+lfWFjHPa4SZQVNtETG1zFIBlHOPh1O1t2gSe3JRK+DXaR3nxRhx3nxUM9ZwRgycEmpG0kzSO/wA1HnrQ1jnkmzQTbabbkgvdb2tupRzE1wIcLg3BG9SyZGnsdGLFFq2ZjpP0eZV1LJ3S+wGxgxll9MNJIbpXyBJzy1FSzXvDtK3s5NAta4AsCBsV9psGwbuXJUmLU+mfZdbbqv3KM8021vwdMMUIpqiygl0gDbI2Gdh8ynTZZuraG0ga+5kc8GLY5p0srDZYG3IK0EuVydit8lrlEPjJ7pkmWIa8k2S0aysrjWKOa7SjuS0XcBncXzy3pVNiHXNDmAm47IzIO7JdEcyashLE4umXjXN0tFp4gfRNV7G248M1CihmFnaJaBnmD5q7w+djsnW0ly5Ia0deLJtTKSOmsSSMj8jrC5l0owEUUrdFxMb7uZfW2xzZfba4z4967hV04Avo9yp8ewGnq42tmY4tDtJrmuLHNdYjZzTY8rhsyeTBq3Q36K6mR9CC+9hJI2PPUwWyHAO0v+lr7rNdGsIFFEYWSPcwuL2ufa4uACLgAe7fVtVw1xJsHi+u22yo8ib2IdqSW5VVtL1cht2Xe03h8Q/e9MuF1bV1M5zddy32h9R4Kqco5VaOrC7RcYTPpMAJ7N2+GpTlRYfcO2i+vhxU98ttbinhkSjuRnierYn3Qus/V421mQdmNYORCXhVfLMb6NmAH27EAnZY7U66iLdI0ulnGOpmponKHiBzPNNQad8nJFfG+177VaU7jwQUaY2gopjk3oKdjaSxMyp+lmKdRSTyg2LY3hp+84aLfMhLNVdY70p1lqLRv25Ym+BL/wDFc8VckXltFs5OXpvTTZek3yXecQ7dJbmknVzWk6G9G31swYMmNsZJPhbuH3jsQk0lbCk26REwTApql+jEy+9xyaz8R+i3lF6Mo7fxZ5C7boBrG+YJXRMKwmGnjEcbAGjz3knaeKnhrdwXDPPNvbY6oYork5VW+i/K8Ezr7pGhw8W2VfRdFcUpHF0cLZGuyfG1zZI5WjY+N+jfhbMbF2caKMpVmyL9GeKJn+iuPvmPVSRPjc1ukWSm0jLEAj27OkbmLPF9zs7F2jfOwaymnRF1vZBtmL7OW5MuoJL5EW3OOpZ5ZeEFY4v7MRX1IIFthuogrclZNwkHtv7mj6n9EuLDqdnuaXFx0vLV5LW2tyilGOyM9UVJJyueAzTtPRTOP8t3eNEea0f2prcgABuAsmJcRG9TcUU7svCKyTA5HuBdot0dVzcjlZOPwIEWdKf7WgHuJ/ROSYlxUZ+I8UHQv+hcHRukZmWF5zuXuJv3Cw8lLjligboRRtYPhY0MHgFUS4nxUSatvmDnzQc2uDdteS+bieacFQw5loJ3kC/isrFXDac+GafFcN6EZBlBFviM4AIZYXz38/oqiGoLGWYdK9zYm+i4awOCYrKkuFgVWvmLCNG9r6jn7ufmqaroeK2J9PiMui9hscrt4b2/veiw/ETEfbN9Eizjudrb8wqaGaQPdlrbYDvz+SlxQm99d9YtfPh4pHOqHaXDN02vYVHZTw3JBOedjaw5ZKjhgmdqY88bG3in5aadjHPcw2aC46ibAXOV0ynJryc2mMXsy4e9jAquvxRjC27b6RDQLm+eo8lQV2MuDbDNziG77X/QXKhVtU500e5pLid1hYDxPkjd8l1CuTTUlW0SG+VtHMHRz1Z79YVm7F27XArndRLI6ZoGTB7TnG9yc7D5LW4X0cL42vc8guz0SL2bqbtGz5oxcv5Fyxgt5FucaFvZafxaJcAodNiUkh0zNpMuR1YZYk8S45crd6fg6NN96QkbABb5kqbUYDAGW0XZ6zpuB8QRZWUcr3ZB5MK2SCpp2yN0mG4zHIjIg8UE/FEGtDRqAAFyTkOJzKCocr52Mm2oG9ZD0nzXpmcJWn/S8fVSPWFtqpel03WU7gNha/wOfldJBVJFp7xZhNJDS1Ju6AP1XacZMhZpEAC5NgBtJJyHyXfuieEto6dseWmQHSO3vIz7hqHJcP6J2NbADq0w78rS4eYC7NJiwG1QzejowryaI1QSPtgWTmxq+QUuiqSc3FcjidJrIJLqQJgFmhig1InYjfUtooKRpzWhNvrws39rKYmr7JQ6TRSYioc2JcVmpsWCr58XG9amxqSNNPiXFQpsVG9ZCsxxo1uVHP0oaTZtzvOwd6ZYmxXkjHk382LjeoM2LnesLFjT5Lm1gO/l+qhTVriTd5sONtWvUm7DEfUI3z8SJ2gJUcwdresBSMDsztJOfcAPNSmxljxo7M+W8ngleBezLO/RvGZe+lOq2t7TwOZA+a5LiVS50jrOdYkm1zbPPUoYaqLo/wBJvq/w6zUdKKWPXM13Bl5D/pVTVdO2aooXO4vIYPAXWAanGKkekgudycupm+NjsPQAy4hpSOexgikjvG1nbYQTa5JPukd66dHTsb2WNHIALmHoOk//AEt4QO83hdTQljjGWyF7kpLdgREb0aJYBS1PRimdazCwgl12k7dljcWSY+i8DZOsANsv4ZN2m3E524K7RFLoj6KdyfsjU9BFHkyNo26rnxKfcEpEnQjd8hxo6nUOaJiFRqCp4F8kZyCDkFIY82DGzvPeCikxi4sduSsTg43JmXCgF1dtCa2ZeSwOWpJ0lfvwpNnDAqdsnZX4XW9VMyX4Tc8iCD5ErbDHmv1O18Vm48KBKl+phuSSx2UhNxNRTVzBtU44plYFYtuFkaiR3lPChk+Nyi8BZZjoeGODhclWJe0LnVIKhvZldysD9FJfU1f9QHm3/lB4WP3V5NnNXgKrqsUCyU8lUffb+U/qoMsVQdb/AACT47Y3fijQ1uMt4LM4ljZz0QmXYdJe5cTzTMmGuO3zVYYKIzzt8Fe97n5udc7tX/Scjhvrc1redyfBSRhrv2UsYcVXQyFjE1TYaEYNtp3neo9jtyHHX4KeaAoCgKCxmciH9tI7I4BSYapxaRmSfM7Lp4UJUiKjR7aNqZn3E3N9d8+B2oBX2IYMXMMjBdzRdzR7zRtHEKgBRaoAtqcYU0EtiUx1f0Hynrp2742m34Xf/RXXlxj0Iy2qpW74T5Pb+q7MVHJyPHgF0V0CiUxwFEjRFYwSNEgmAKYk1JyCNiTUnIJnwAjucgiKCQJykMYkup4zrKpfWaHrTkuyiRbHD4z7wSfVEfxBVgxXklDFRuCNsxaNweP4wno8OZtkb4qn9bDcEPXA3DwQ3MaFlDEPeae9SIoIRtb4rLeuuA8EoY7wHgEtMxrWiEbWoHqfu+Kyhxu+weCScYG4IaQ2awNgOxvikvp6f7visr64G4IvXA3BajWaN9HTnd4qPJQU/DxVL64G4JJxZvBGmAtnYbDvHim3YZDvCrfWrdwQ9aBHcxMdh0SQaONQ3YkEg4gEbZiTNTMCabEo5qgUuOoF9axi6wbJ4BGtY/pvgv2WpIaP4cg61m4X7Te4+RCvqnGQywuLjaFB6YYu2pp4z78cgHNrmOv5tatdoxj0tqQUpqQx0L0NTlteLDJ0UrTysHfNoXc/tHALzP0ZxJ1NNHMzWx7SR8TCbPHe0legmYgDmGusQCNW3vUM70tNlMastDPwCHXncFW/bfuny/VJdXfcPl+q5+5H2V0Ms+vPBEZzwVWK77p8Qga77h8Qt3Y+zaGWJmKAkKqnV7tkY/N/wiFc/wDpj83/AAissfZtDLiNyOYAgZgKpp8T2PGjxvceOxTZZL25KupNbCaWmOFrfiCCil6NCzUedjG74T4JRgeMyx35SvQX2JnwjwRCgG7yW+S/Qe1+nn0xPGtrh3FFoO+E87FeiPVrdrWnyROw6P4Qj8l+jdr9PO5jd8J8Ch1btei7wK9DermfAEXq9nwhD5X4btfp54sdxRaS9FDDIj/42pQwWH+m0dy3yvw3a/TzoChcr0T6kh/pM8EpuAwf0W+FkV1P4Dtfp5zzR3K9GeoKf+izwzTbuj1Ne/Us52CPyPwHbPOpJ3oA8V6JOA0/9JngiPR2mOZgZfforfJ/A9o873O9HpHeu0dOMLp6ejkmjiibINAMPVtfclwFrOG665DVdIpW2/h0+ltP2eLw7KrCcpR1JCSik6ZFBKGkUmbH5nscHMgAI0dJkMcbu5wFwqwTv+J3iU6b8i7FsHlK6wrbehbDmzOqZJmiRjWxRta8CQaTi5zrB2o2A8VuRgdO4EerogSLXEYaW8QdHWpTz6XQ6has4Z1d89m9R6yoDmhjdQ9on72erlcrUelbBjTTQOsQJIi3RsGi8RAyA4Ob4LGMVIvUrEe2w3ZKajeETQmASmTG2iNu3cvRuCND6aF7dTooneLAvN8S7/6Mqps+HQmxvHpQHmw5HwLVz9THVFFcLpl46nTZp1ZdXbafmgSNy4dB0aiuFEUf2UDWp2gUYuNq2lG1FcYNwQEaszZJLQm0I2orTTXTL6A7C4cA4geF1bFg3IjGjpBZTGhPxP8AzH9UFaujKCXSGyV1VksEDYggqCA6oHNEYbIII0CxLrbQlNaNyCCUIGpQaggsEW13BLBCCCyYGhJtuSSwIIJmAJsd0JIbbUEFqRrOf+mCqdHSRge9L4WY79Vwpw0jzRoLtwfRIhk+wUu4ahkkAIIJ3yKd89CtGGYaH5Xlmmef7T1Y8mea3buSJBcOT7M6IcHOPThRadFHNleKZo5iQFpHiGnuXD2HYggujB9SWTkcOpJCCCsxBYXafQniZMEtMQLRlszXDaJLgg8QW+aCCTIrgxofZHSC9KDd6CC4i4lzAmzkggsEbMidbHxQQWSMwPdZN2JOtBBYwsMttKCCCxj/2Q=="
+                 class="img-fluid rounded-top w-100"
+                  alt=""
+                />
+              </div>
+              <div class="service-content rounded-bottom bg-light p-4">
+                <div class="service-content-inner">
+                  <h5 class="mb-4">Dislocations</h5>
+                  <p class="mb-4">
+                 A dislocation happens when the bones in a joint are forced out of their normal position.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <div class="service-item rounded">
+              <div class="service-img rounded-top">
+                <img
+                src="https://www.arthritis.org/getmedia/d1da762e-e481-4f1f-ad2b-8823a5215516/PT-and-OT-Treatments_Physical-Therapy-for-Athritis.jpg?width=600&height=325&ext=.jpg"
+                 class="img-fluid rounded-top w-100"
+                  alt=""
+                />
+              </div>
+              <div class="service-content rounded-bottom bg-light p-4">
+                <div class="service-content-inner">
+                  <h5 class="mb-4">Osteoarthritis / Rheumatoid Arthritis</h5>
+                  <p class="mb-4">
+                Osteoarthritis: A wear-and-tear condition where the cartilage in joints breaks down, causing pain and stiffness.</p>
+                  <a
+                    href="#"
+                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.3s"
+          >
+            <div class="service-item rounded">
+              <div class="service-img rounded-top">
+                <img
+                src="https://enhance.physio/wp-content/uploads/2024/11/Neck-Pain-3_4.webp"
+                  class="img-fluid rounded-top w-100"
+                  alt=""
+                />
+              </div>
+              <div class="service-content rounded-bottom bg-light p-4">
+                <div class="service-content-inner">
+                  <h5 class="mb-4">Back Pain / Neck Pain</h5>
+                  <p class="mb-4">
+                  Pain in the spine area due to muscle strain, poor posture, disc problems, or injury.
+                  <a
+                    href="#"
+                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+            <a
+              class="btn btn-primary rounded-pill text-white py-3 px-5"
+              href="#"
+              > Injuries Physiotherapy</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+         
+    <!-- Physiotherapy Section End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btns btn-primary btn-lg-square back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script>
+      // Initialize WOW.js for animations
+      new WOW().init();
+
+      // Accordion functionality
+      const acc = document.querySelectorAll(".accordion");
+      acc.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          this.classList.toggle("active");
+          const panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

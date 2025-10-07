@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fees & Packages | WeCare Physiotherapist</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #ffffff;
+        color: #333;
+      }
+
+      .navbar .nav-link {
+        font-weight: 500;
+        margin-right: 15px;
+      }
+
+      .navbar .nav-link.active {
+        color: #15b9d9 !important;
+      }
+
+      /* Hero Section */
+      .fees-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("img/bg img.jpg") center/cover no-repeat;
+        height: 50vh;
+      }
+
+      .fees-hero h1 {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Section Titles */
+      .section-heading {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        color: #0d6efd;
+      }
+
+      /* Prices Section */
+      .price-card {
+        background: #fff;
+        border-radius: 15px;
+        text-align: left;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        border: 1px solid #e6e6e6;
+        height: 100%;
+      }
+
+      .price-card:hover {
+        transform: translateY(-8px);
+        background: linear-gradient(135deg, #15b9d9, #0d6efd);
+        color: #fff;
+        box-shadow: 0 8px 25px rgba(13, 110, 253, 0.3);
+      }
+
+      .price-card h5 {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #0d6efd;
+      }
+
+      .price-card h4 {
+        color: #15b9d9;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .price-card p {
+        color: #555;
+        font-size: 0.95rem;
+        margin-bottom: 0;
+      }
+
+      .price-card .small-text {
+        font-size: 0.85rem;
+        color: #777;
+        margin-top: 5px;
+      }
+
+      .price-card:hover h5,
+      .price-card:hover h4,
+      .price-card:hover p,
+      .price-card:hover .small-text {
+        color: #fff;
+      }
+
+      /* Packages Section */
+      .package-card {
+        background: #fff;
+        border-radius: 15px;
+        text-align: center;
+        padding: 35px 25px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        border: 1px solid #e6e6e6;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        min-height: 300px; /* ensures consistent height */
+      }
+
+      .package-card:hover {
+        transform: translateY(-8px);
+        background: linear-gradient(135deg, #15b9d9, #0d6efd);
+        color: #fff;
+        box-shadow: 0 8px 25px rgba(13, 110, 253, 0.3);
+      }
+
+      .package-card h5 {
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #0d6efd;
+      }
+
+      .package-card h4 {
+        color: #15b9d9;
+        margin: 15px 0;
+        font-weight: 700;
+      }
+
+      .package-card .tagline {
+        font-style: italic;
+        font-size: 0.95rem;
+        color: #777;
+      }
+
+      .package-card:hover h5,
+      .package-card:hover h4,
+      .package-card:hover .tagline {
+        color: #fff;
+      }
+
+      /* Equal Height Rows */
+      .row.g-4 > [class*="col-"] {
+        display: flex;
+        flex-direction: column;
+      }
+      .row.g-4 > [class*="col-"] > div {
+        flex-grow: 1;
+      }
+
+
+      /* Corporate */
+      .corp-card {
+        background: #f8f9fa;
+        border-radius: 10px;
+        text-align: center;
+        padding: 30px 20px;
+        transition: 0.4s;
+        border: 1px solid #d6e4ff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .corp-card:hover {
+        background: #15b9d9;
+        color: #fff;
+      }
+      .corp-card h4 {
+        color: #0d6efd;
+      }
+      .corp-card:hover h4 {
+        color: #fff;
+      }
+
+      /* Buttons */
+      .btn-primary {
+        background-color: #15b9d9;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #0d6efd;
+      }
+
+      footer {
+        background: #f8f9fa;
+        border-top: 1px solid #e5e5e5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+      <div class="row gx-0 align-items-center" style="height: 45px">
+        <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+          <div class="d-flex flex-wrap">
+            <a href="#" class="text-light me-4"
+              ><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A
+              Location</a
+            >
+            <a href="#" class="text-light me-4"
+              ><i class="fas fa-phone-alt text-primary me-2"></i>+91
+              8810503187</a
+            >
+            <a href="#" class="text-light me-0"
+              ><i class="fas fa-envelope text-primary me-2"></i
+              >Example@gmail.com</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+          <div class="d-flex align-items-center justify-content-end">
+            <a
+              href="#"
+              class="btn btn-light btn-square border rounded-circle nav-fill me-3"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="#"
+              class="btn btn-light btn-square border rounded-circle nav-fill me-3"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="#"
+              class="btn btn-light btn-square border rounded-circle nav-fill me-3"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="btn btn-light btn-square border rounded-circle nav-fill me-0"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Topbar End -->
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0"
+      >
+        <!-- <a href="index.html" class="navbar-brand p-0"> -->
+        <!-- <h1 class="text-primary m-0">
+              <i class="fas fa-star-of-life me-3"></i>Terapia
+            </h1> -->
+        <img
+          src="img/logo new.png"
+          alt="Logo"
+          style="height: 100px; width: 150px"
+        />
+        <!-- </a> -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+         <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >About</a
+              >
+              <div class="dropdown-menu m-0">
+                <a href="ourjourney.html" class="dropdown-item">Our Journey</a>
+                <a href="team.html" class="dropdown-item">Our Team</a>
+                <a href="FAQs.html" class="dropdown-item">FAQs
+                </a>
+                
+              </div>
+            </div>
+         <div class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                <div class="dropdown-menu m-0">
+                  <a href="physiotherapy.html" class="dropdown-item">Physiotherapy</a>
+                  <a href="injuries.html" class="dropdown-item">Injuries We Treat</a>
+                </div>
+           </div>
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Fees & Packages</a
+              >
+              <div class="dropdown-menu m-0">
+                <a href="appointment.html" class="dropdown-item">Appointment</a>
+                <a href="feature.html" class="dropdown-item">Features</a>
+                <a href="fees.html" class="dropdown-item">Fees & Packages</a>
+                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                <a href="404.html" class="dropdown-item">404 Page</a>
+              </div>
+            </div>
+            <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+            <a href="blog.html" class="nav-item nav-link">Our Blog</a>
+          </div>
+         <a href="appointment.html" 
+   class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">
+   Book Appointment
+</a>
+
+        </div>
+      </nav>
+    <!-- Hero -->
+    <section class="fees-hero text-white text-center d-flex align-items-center justify-content-center">
+      <div>
+        <h1 class="display-4 fw-bold mb-3">Fees & Packages</h1>
+        <p class="lead">Transparent • Affordable • Empowering Physiotherapy</p>
+      </div>
+    </section>
+
+    <!-- Section: Fees -->
+    <section class="container py-5">
+      <div class="text-center mb-5">
+        <h2 class="section-heading">Physiotherapy: Session Fees (Individuals)</h2>
+        <p class="text-muted">No hidden costs. No endless therapy loops. Just expert care, smart recovery plans, and education that makes you more independent and confident.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-3">
+          <div class="price-card">
+            <h5>Initial Assessment (Quick Check)</h5>
+            <p class="small-text">30 mins</p>
+            <h4>₹500</h4>
+            <p>Focused consultation to understand your condition, find the root cause, and plan next steps.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="price-card">
+            <h5>Assessment + Rehab + Advice + Home Plan (Full Fix)</h5>
+            <p class="small-text">45 mins</p>
+            <h4>₹750</h4>
+            <p>Full evaluation, guided rehab, personalised advice, plus a structured home exercise program.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="price-card">
+            <h5>Follow-Up Session (Tune-Up)</h5>
+            <p class="small-text">30 mins</p>
+            <h4>₹600</h4>
+            <p>Progress review, updated exercises, and ongoing guidance.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="price-card">
+            <h5>ErgoPhysio (Ergo Reset)</h5>
+            <p class="small-text">45 mins</p>
+            <h4>₹750</h4>
+            <p>Workstation/posture assessment with corrections + movement strategies.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="appointment.html" class="btn btn-primary rounded-pill px-5 py-3">Book Your Session Now</a>
+      </div>
+    </section>
+
+    <!-- Section: CoreMotion Care Packages -->
+    <section class="container py-5">
+      <div class="text-center mb-5">
+        <h2 class="section-heading">📦 CoreMotion Care Packages (Individuals)</h2>
+        <p>Because recovery isn’t a one-time thing — it’s a journey.</p>
+      </div>
+
+      <!-- Short-Term Packages -->
+      <h3 class="text-center mb-4 text-primary">⚡ Short-Term Packages</h3>
+      <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-3">
+          <div class="package-card">
+            <h5>🏃‍♂️ Starter Recovery</h5>
+            <p>1 Initial + 2 Follow-Ups</p>
+            <h4>₹2,000</h4>
+            <p class="tagline">“Your quick reboot — small pain, big relief.”</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="package-card">
+            <h5>💪 Rehab Progress</h5>
+            <p>1 Full Assessment + 4 Follow-Ups</p>
+            <h4>₹3,500</h4>
+            <p class="tagline">“Your comeback plan — level up your recovery.”</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="package-card">
+            <h5>🪑 Ergo Reset</h5>
+            <p>1 ErgoPhysio + 2 Follow-Ups</p>
+            <h4>₹2,000</h4>
+            <p class="tagline">“Fix your desk, fix your body, fix your grind.”</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="package-card">
+            <h5>🌟 Complete Care</h5>
+            <p>1 Full + 1 ErgoPhysio + 5 Follow-Ups</p>
+            <h4>₹5,500</h4>
+            <p class="tagline">“The all-in package — total care, zero compromise.”</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Long-Term Packages -->
+      <h3 class="text-center mb-4 text-primary">🔄 Long-Term Packages</h3>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="package-card">
+            <h5>🔄 Steady Progress</h5>
+            <p>1 Full + 8 Follow-Ups</p>
+            <h4>₹6,500</h4>
+            <p class="tagline">“Slow and steady, but always forward.”</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="package-card">
+            <h5>🏋️ Athlete Comeback</h5>
+            <p>1 Full + 10 Follow-Ups + 1 Review</p>
+            <h4>₹8,500</h4>
+            <p class="tagline">“Your comeback starts here.”</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="package-card">
+            <h5>💻 Work & Wellness</h5>
+            <p>1 ErgoPhysio + 6 Follow-Ups + 1 Review</p>
+            <h4>₹7,500</h4>
+            <p class="tagline">“Work hard, stay strong, feel unstoppable.”</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="package-card">
+            <h5>🌟 Total Care Annual</h5>
+            <p>2 Full + 12 Monthly Follow-Ups + 2 Ergo Reviews</p>
+            <h4>₹15,000</h4>
+            <p class="tagline">“Not just recovery — this is a lifestyle upgrade.”</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="appointment.html" class="btn btn-primary rounded-pill px-5 py-3">Choose Your Package & Start Recovery</a>
+      </div>
+    </section>
+
+    <!-- Section: Corporate -->
+    <section class="corporate py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-heading">🏢 Corporate Wellness & Ergonomic Packages</h2>
+          <p>Pain at work affects teams, not just individuals. Long hours, poor ergonomics, and screen fatigue cost companies productivity. CoreMotion helps workplaces stay healthy and high-performing.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="corp-card">
+              <h5>🪑 Workstation Wellness Pack</h5>
+              <p>1 Group Ergonomic Webinar (30 mins) + 10 Individual Assessments</p>
+              <h4>₹12,000</h4>
+              <p>“Better setups = better results.”</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="corp-card">
+              <h5>💻 Corporate Reset Pack</h5>
+              <p>Group Posture & Stretch Session + 1-on-1 Micro Consults</p>
+              <h4>₹15,000</h4>
+              <p>“Recharge your team in just 20 minutes a day.”</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="corp-card">
+              <h5>🧘 Wellness at Work Pack</h5>
+              <p>Monthly Online Class + Recorded Library + Quarterly Check-In</p>
+              <h4>₹25,000 / quarter</h4>
+              <p>“Healthy team = productive team.”</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="corp-card">
+              <h5>🌟 Corporate Complete Care</h5>
+              <p>Kick-off Workshop + Individual Reviews + 3-Month Tracking & Reports</p>
+              <h4>₹45,000 / 3 months</h4>
+              <p>“Invest in your people. The ROI is health.”</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="contact.html" class="btn btn-primary rounded-pill px-5 py-3">Contact Us for Corporate Plans</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CoreMotion Promise -->
+    <section class="container py-5 text-center">
+      <div class="text-center mb-5">
+        <h2 class="section-heading">🌟 The CoreMotion Promise</h2>
+        <p class="lead">We don’t trap you into endless therapy.</p>
+        <p class="lead">We educate, empower, and prevent.</p>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm h-100">
+            <i class="fas fa-graduation-cap fa-3x text-primary mb-3"></i>
+            <h5>Educate</h5>
+            <p class="mb-0">Understand your body, your pain, your posture.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm h-100">
+            <i class="fas fa-fist-raised fa-3x text-primary mb-3"></i>
+            <h5>Empower</h5>
+            <p class="mb-0">Personalised home exercise programs for independence.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded shadow-sm h-100">
+            <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+            <h5>Prevent</h5>
+            <p class="mb-0">Lifestyle changes that keep you pain-free long-term.</p>
+          </div>
+        </div>
+      </div>
+      <p class="mt-4 fs-5">At CoreMotion, recovery isn’t just about treatment — it’s about confidence, resilience, and future-proof health.</p>
+    </section>
+
+    <!-- Footer -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

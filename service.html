@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>We Care Physiotherapist</title>
+    <title>CoreMotion Physiotherapist</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -37,6 +37,90 @@
 
     <style>
       /* Custom styles for the new content */
+      :root {
+        --primary: #15b9d9;
+        --secondary: #023e8a;
+        --light: #e7f4ff;
+        --dark: #001f3f;
+      }
+
+      .btn-primary {
+        background-color: var(--primary) !important;
+        border-color: var(--primary) !important;
+      }
+
+      .btn-primary:hover {
+        background-color: #0077b6 !important;
+        border-color: #0077b6 !important;
+      }
+
+      .text-primary {
+        color: var(--primary) !important;
+      }
+
+      .bg-primary {
+        background-color: var(--primary) !important;
+      }
+
+      .bg-light {
+        background-color: var(--light) !important;
+      }
+
+      .sub-style {
+        position: relative;
+        display: inline-block;
+      }
+
+      .sub-style::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(21, 185, 217, 0.1);
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        transform: scale(1);
+        animation: pulse-bg 2s infinite;
+      }
+
+      @keyframes pulse-bg {
+        0% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.2;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+      }
+
+      .sub-title {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .section-title h1 {
+        color: var(--secondary);
+        font-family: "Playfair Display", serif;
+      }
+
+      .service-item .service-content-inner {
+        background: #fff;
+        padding: 30px;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .service-item .service-img img {
+        height: 230px;
+        object-fit: cover;
+      }
+
       .physio-section {
         background-color: #f8f9fa;
         padding: 60px 0;
@@ -50,6 +134,7 @@
         padding: 30px;
         margin-bottom: 30px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%; /* Ensure cards are same height */
       }
 
       .physio-card:hover {
@@ -58,7 +143,7 @@
       }
 
       .physio-card h3 {
-        color: #023e8a;
+        color: var(--secondary);
         margin-bottom: 20px;
         position: relative;
         padding-bottom: 10px;
@@ -71,7 +156,7 @@
         left: 0;
         width: 50px;
         height: 3px;
-        background-color: #15b9d9;
+        background-color: var(--primary);
       }
 
       .benefit-item {
@@ -81,7 +166,7 @@
       }
 
       .benefit-icon {
-        color: #15b9d9;
+        color: var(--primary);
         font-size: 20px;
         margin-right: 15px;
         margin-top: 3px;
@@ -100,6 +185,7 @@
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease;
+        height: 100%; /* Ensure items are same height */
       }
 
       .condition-item:hover {
@@ -108,12 +194,12 @@
       }
 
       .condition-item h4 {
-        color: #023e8a;
+        color: var(--secondary);
         margin-bottom: 10px;
       }
 
       .ergo-section {
-        background-color: #e7f4ff;
+        background-color: var(--light);
         padding: 60px 0;
         margin: 40px 0;
       }
@@ -122,12 +208,6 @@
         max-width: 1000px;
         margin: 30px auto;
         padding: 20px;
-      }
-
-      h1 {
-        text-align: center;
-        color: #000000;
-        margin-bottom: 40px;
       }
 
       .step {
@@ -158,7 +238,7 @@
 
       .step-title {
         font-size: 20px;
-        color: #023e8a;
+        color: var(--secondary);
         margin-bottom: 10px;
       }
 
@@ -190,118 +270,16 @@
         transform: translateY(-3px);
       }
 
-      .accordion {
-        background-color: #f1f9ff;
-        cursor: pointer;
-        padding: 15px 20px;
-        width: 100%;
-        border: none;
-        outline: none;
-        text-align: left;
-        font-size: 18px;
-        font-weight: bold;
-        color: #023e8a;
-        border-radius: 10px;
-        transition: background 0.3s ease;
-        margin-top: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .accordion:after {
-        content: "\002B";
-        font-size: 20px;
-        color: #023e8a;
-        font-weight: bold;
-      }
-
-      .accordion.active:after {
-        content: "\2212";
-      }
-
-      .accordion:hover {
-        background-color: #d9f0ff;
-      }
-
-      .panel {
-        padding: 0 20px;
-        display: none;
-        overflow: hidden;
-        background-color: #ffffff;
-        border-left: 4px solid #0077b6;
-        margin-bottom: 10px;
-        margin-top: 5px;
-        animation: fadeIn 0.5s ease;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .accordion {
-          font-size: 16px;
-        }
-      }
-
-      .form-section {
-        margin-top: 40px;
-        padding: 25px;
-        background-color: #e7f4ff;
-        border-radius: 12px;
-      }
-
-      label {
-        display: block;
-        margin: 12px 0 6px;
-        font-weight: 600;
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        margin-bottom: 15px;
-        transition: border-color 0.3s ease;
-      }
-
-      input:focus,
-      textarea:focus {
-        border-color: #15b9d9;
-        outline: none;
-      }
-
-      input[type="submit"] {
-        background-color: #0077b6;
-        color: white;
-        cursor: pointer;
-        border: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-      }
-
-      input[type="submit"]:hover {
-        background-color: #005f8a;
-      }
-
       .highlight-box {
-        background-color: #f1f9ff;
-        border-left: 4px solid #15b9d9;
+        background-color: var(--light);
+        border-left: 4px solid var(--primary);
         padding: 20px;
         margin: 20px 0;
         border-radius: 0 8px 8px 0;
       }
 
       .highlight-box h4 {
-        color: #023e8a;
+        color: var(--secondary);
         margin-bottom: 10px;
       }
 
@@ -321,7 +299,7 @@
         content: "\f00c";
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
-        color: #15b9d9;
+        color: var(--primary);
         margin-right: 10px;
       }
 
@@ -363,6 +341,88 @@
         100% {
           transform: scale(1);
         }
+      }
+
+      /* Flip Card Styles */
+      .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 300px; /* Adjusted for better content visibility */
+        perspective: 1000px; /* 3D effect */
+        margin-bottom: 30px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        overflow: hidden; /* Ensure content doesn't spill */
+      }
+
+      .flip-card-front {
+        background-color: white;
+        color: black;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .flip-card-front img {
+        max-width: 100%;
+        max-height: 150px; /* Limit image height */
+        object-fit: contain; /* Adjust to fit without cropping */
+        margin-bottom: 15px;
+        border-radius: 8px;
+      }
+
+      .flip-card-back {
+        background-color: var(--secondary);
+        color: white;
+        transform: rotateY(180deg);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        align-items: flex-start;
+      }
+
+      .flip-card-back h5 {
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .flip-card-back p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .footer .footer-item a {
+        color: #adb5bd;
+        transition: 0.3s;
+      }
+
+      .footer .footer-item a:hover {
+        color: var(--primary);
       }
     </style>
   </head>
@@ -451,7 +511,25 @@
           <div class="navbar-nav ms-auto py-0">
             <a href="index.html" class="nav-item nav-link">Home</a>
             <a href="about.html" class="nav-item nav-link">About</a>
-            <a href="service.html" class="nav-item nav-link active">Services</a>
+
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle active"
+                data-bs-toggle="dropdown"
+                >Services</a
+              >
+              <div class="dropdown-menu m-0">
+                <a href="physiotherapy.html" class="dropdown-item active"
+                  >Physiotherapy</a
+                >
+                <a href="injuries.html" class="dropdown-item"
+                  >Injuries We Treat</a
+                >
+                <a href="ergonomics.html" class="dropdown-item">Ergonomics</a>
+                <a href="eduhub.html" class="dropdown-item">EduHub</a>
+              </div>
+            </div>
             <div class="nav-item dropdown">
               <a
                 href="#"
@@ -501,929 +579,135 @@
     </div>
     <!-- Header End -->
 
-    <!-- Services Start -->
+    <!-- Services Section Start (Overview of all services with flip cards) -->
     <div class="container-fluid service py-5">
       <div class="container py-5">
-        <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.2s">
-          <div class="sub-style">
-            <h4 class="sub-title px-3 mb-0">What We Do</h4>
+        <div class="section-title mb-5 text-center wow fadeInUp">
+          <div class="sub-style mx-auto">
+            <h4 class="sub-title px-3 mb-0">What We Offer</h4>
           </div>
-          <h1 class="display-3 mb-4">
-            Our Service Given Physio Therapy By Expert.
-          </h1>
-          <p class="mb-0">
-            Expert physiotherapy care to relieve your pain and discomfort –
-            helping you return to what you love, quickly and effectively.
+          <h1 class="display-3 mb-4">CoreMotion Services</h1>
+          <p class="mb-0 lead">
+            Expert care to restore movement, reduce pain, and improve your
+            quality of life. Explore our specialized services.
           </p>
         </div>
+
         <div class="row g-4 justify-content-center">
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <div class="service-item rounded">
-              <div class="service-img rounded-top">
-                <img
-                  src="img/service-2.jpg"
-                  class="img-fluid rounded-top w-100"
-                  alt=""
-                />
-              </div>
-              <div class="service-content rounded-bottom bg-light p-4">
-                <div class="service-content-inner">
-                  <h5 class="mb-4">Physiotherapy</h5>
-                  <p class="mb-4">
-                    Physiotherapy improves movement, enhances quality of life,
-                    and combines active rehab with online treatments.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <div class="service-item rounded">
-              <div class="service-img rounded-top">
-                <img
-                  src="https://images.unsplash.com/photo-1583912086268-cb0854235c9f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEFzc2VzcyUyMCUyNiUyMFRlc3QlMjB0aGUlMjBEaWFnbm9zaXN8ZW58MHx8MHx8fDA%3D"
-                  class="img-fluid rounded-top w-100"
-                  alt=""
-                  style="height: 230px"
-                />
-              </div>
-              <div class="service-content rounded-bottom bg-light p-4">
-                <div class="service-content-inner">
-                  <h5 class="mb-4">Assess & Test the Diagnosis</h5>
-                  <p class="mb-4">
-                    Assessing and testing the diagnosis helps identify
-                    underlying issues and tailor personalized treatment plans.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <div class="service-item rounded">
-              <div class="service-img rounded-top">
-                <img
-                  src="https://images.unsplash.com/photo-1701673965732-0ae3d353e8fc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fFJlY292ZXJ5JTIwUGxhbiUyMCUyNiUyMFRpbWVsaW5lfGVufDB8fDB8fHww"
-                  class="img-fluid rounded-top w-100"
-                  alt=""
-                />
-              </div>
-              <div class="service-content rounded-bottom bg-light p-4">
-                <div class="service-content-inner">
-                  <h5 class="mb-4">Recovery Plan & Timeline</h5>
-                  <p class="mb-4">
-                    We provide a recovery timeline, research-backed advice, and
-                    a personalized rehab program during sessions.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <div class="service-item rounded">
-              <div class="service-img rounded-top">
-                <img
-                  src="https://images.unsplash.com/photo-1618218168350-6e7c81151b64?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8T25nb2luZyUyMFN1cHBvcnQlMjAlMjYlMjBSZWNvdmVyeSUyMEd1aWRhbmNlfGVufDB8fDB8fHww"
-                  class="img-fluid rounded-top w-100"
-                  alt=""
-                />
-              </div>
-              <div class="service-content rounded-bottom bg-light p-4">
-                <div class="service-content-inner">
-                  <h5 class="mb-4">Ongoing Support & Recovery Guidance</h5>
-                  <p class="mb-4">
-                    We guide your recovery, providing follow-ups, programs, test
-                    results, and ongoing email support.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.1s"
-          >
-            <div class="service-item rounded">
-              <div class="service-img rounded-top">
-                <img
-                  src="img/service-5.jpg"
-                  class="img-fluid rounded-top w-100"
-                  alt=""
-                />
-              </div>
-              <div class="service-content rounded-bottom bg-light p-4">
-                <div class="service-content-inner">
-                  <h5 class="mb-4">Work Injuries</h5>
-                  <p class="mb-4">
-                    Effective treatment for work injuries helps restore
-                    function, reduce pain, and promote quick recovery.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <div class="service-item rounded">
-              <div class="service-img rounded-top">
-                <img
-                  src="img/service-6.jpg"
-                  class="img-fluid rounded-top w-100"
-                  alt=""
-                />
-              </div>
-              <div class="service-content rounded-bottom bg-light p-4">
-                <div class="service-content-inner">
-                  <h5 class="mb-4">Spot Injuries</h5>
-                  <p class="mb-4">
-                    Spot injuries are treated with targeted therapy to reduce
-                    pain, promote healing, and restore function.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <div class="service-item rounded">
-              <div class="service-img rounded-top">
-                <img
-                  src="img/service-7.jpg"
-                  class="img-fluid rounded-top w-100"
-                  alt=""
-                />
-              </div>
-              <div class="service-content rounded-bottom bg-light p-4">
-                <div class="service-content-inner">
-                  <h5 class="mb-4">Regular Therapy</h5>
-                  <p class="mb-4">
-                    Regular therapy helps maintain mobility, prevent injuries,
-                    reduce pain, and improve overall physical health.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <div class="service-item rounded">
-              <div class="service-img rounded-top">
-                <img
-                  src="img/service-8.jpg"
-                  class="img-fluid rounded-top w-100"
-                  alt=""
-                />
-              </div>
-              <div class="service-content rounded-bottom bg-light p-4">
-                <div class="service-content-inner">
-                  <h5 class="mb-4">Back Pain</h5>
-                  <p class="mb-4">
-                    Effective treatments for back pain restore mobility, reduce
-                    discomfort, and improve spinal health naturally.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-primary rounded-pill text-white py-2 px-4 mb-2"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-            <a
-              class="btn btn-primary rounded-pill text-white py-3 px-5"
-              href="#"
-              >Services More</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Services End -->
-
-    <!-- Physiotherapy Section Start -->
-    <div class="container-fluid physio-section">
-      <div class="container">
-        <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.2s">
-          <div class="sub-style">
-            <h4 class="sub-title px-3 mb-0">Physiotherapy</h4>
-          </div>
-          <h1 class="display-3 mb-4">What is Physiotherapy?</h1>
-          <p class="mb-0">
-            Physiotherapy is an evidence-based profession focused on improving
-            movement and function to enhance physical potential and quality of
-            life. Using a holistic approach, physiotherapists promote physical,
-            psychological, and social well-being, recognizing that recovery is
-            shaped by the whole person.
-          </p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6 wow slideUp" data-wow-delay="0.1s">
-            <div class="physio-card">
-              <h3>Holistic Approach</h3>
-              <p>
-                Physiotherapy treats the individual as a whole—addressing not
-                just symptoms but the root causes of movement and function
-                issues. Whether due to age, injury, illness, or environmental
-                factors, physiotherapy benefits people of all ages.
-              </p>
-              <p>
-                Grounded in scientific research, physiotherapists use only
-                proven treatments that deliver measurable results.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6 wow slideUp" data-wow-delay="0.3s">
-            <div class="physio-card">
-              <h3>Online Physiotherapy</h3>
-              <p>
-                Online physiotherapy takes this further by leveraging active
-                rehabilitation and science-based advice. Unlike traditional
-                in-person therapy that often relies on passive techniques,
-                online physio promotes movement and exercises that lead to
-                faster, more sustainable recovery.
-              </p>
-              <p>
-                Research shows that active exercises lead to better recovery
-                outcomes compared to manual treatments or face-to-face sessions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Physiotherapy Section End -->
-
-    <!-- When to Consider Section Start -->
-    <div class="container">
-      <div class="section wow fadeIn" data-wow-delay="0.1s">
-        <h2 class="text-center mb-5">
-          When and Why You Should Consider Physiotherapy
-        </h2>
-        <p>
-          If you're experiencing impaired movement, pain, or uncertainty about
-          how to recover, it's important to contact WeCare The Online
-          Physiotherapist as soon as possible.
-        </p>
-
-        <div class="highlight-box wow fadeIn" data-wow-delay="0.2s">
-          <h4>
-            Physiotherapy is essential for anyone struggling with movement or
-            function, whether from:
-          </h4>
-          <ul>
-            <li>Injury or chronic pain</li>
-            <li>Post-surgical recovery</li>
-            <li>Illness or age-related changes</li>
-            <li>Need to improve mobility and strength</li>
-            <li>Prevention or reduction of injury risk</li>
-            <li>Improving posture, balance, or coordination</li>
-          </ul>
-        </div>
-
-        <p class="wow fadeIn" data-wow-delay="0.3s">
-          Early intervention is key to achieving the best possible recovery.
-          Studies show that acting sooner results in:
-        </p>
-
-        <div class="row mt-4">
-          <div class="col-md-4 wow fadeIn" data-wow-delay="0.4s">
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-heartbeat"></i>
-              </div>
-              <div>
-                <h5>Reduced Pain</h5>
-                <p>
-                  Early treatment helps manage and reduce pain more effectively
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 wow fadeIn" data-wow-delay="0.5s">
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-running"></i>
-              </div>
-              <div>
-                <h5>Faster Recovery</h5>
-                <p>Addressing issues early leads to quicker rehabilitation</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <div>
-                <h5>Prevent Complications</h5>
-                <p>Lower risk of more severe injuries developing</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center mt-5 wow pulse" data-wow-iteration="3">
-          <a
-            href="appointment.html"
-            class="btn btn-primary rounded-pill text-white py-3 px-5"
-            >Book Your Appointment Today</a
-          >
-        </div>
-      </div>
-    </div>
-    <!-- When to Consider Section End -->
-
-    <!-- Online Physio Section Start -->
-    <div class="container-fluid bg-light py-5">
-      <div class="container">
-        <div class="section wow fadeIn" data-wow-delay="0.1s">
-          <h2 class="text-center mb-5">Can Physiotherapy Be Done Online?</h2>
-          <h4 class="text-center mb-4">
-            How Can You Accurately Diagnose Me Remotely?
-          </h4>
-
-          <div class="row align-items-center">
-            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-              <p>
-                Yes, physiotherapy can be highly effective when done online!
-                While traditional physiotherapy often involves hands-on
-                techniques, the true power of physiotherapy lies in the expert
-                knowledge and experience of your therapist.
-              </p>
-              <p>
-                It's not just about manual treatments or massages—though they
-                can offer temporary relief—but about using a holistic,
-                evidence-based approach to address the root cause of your issue.
-              </p>
-              <p>
-                The accuracy of an online diagnosis depends on the precision of
-                the questions asked and a thorough evaluation of your movements.
-                In fact, physiotherapists can often be 90% confident in their
-                diagnosis before confirming it through detailed assessments.
-              </p>
-            </div>
-
-            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-              <div class="physio-card">
-                <h3>Remote Assessment Process</h3>
-                <p>
-                  During video consultations, we carefully assess your movements
-                  through:
-                </p>
-                <ul class="why-choose-list">
-                  <li>Specific movement tests</li>
-                  <li>Targeted pressure application</li>
-                  <li>Muscle, tendon, and ligament function tests</li>
-                  <li>Posture and mobility analysis</li>
-                </ul>
-                <p>
-                  All of this can be done effectively through virtual
-                  consultations, allowing us to create a tailored,
-                  evidence-based treatment plan in the comfort of your own home.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Online Physio Section End -->
-
-    <!-- Why Choose Online Section Start -->
-    <div class="container-fluid py-5" style="background-color: #e7f4ff">
-      <div class="container">
-        <div class="section wow fadeIn" data-wow-delay="0.1s">
-          <h2 class="text-center mb-5">Why Choose Online Physiotherapy?</h2>
-
-          <div class="row">
-            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-              <div class="physio-card">
-                <h3>Benefits of Online Treatment</h3>
-                <ul class="why-choose-list">
-                  <li>
-                    <strong>Backed by Research:</strong> Clinical studies
-                    consistently support the effectiveness of online
-                    physiotherapy.
-                  </li>
-                  <li>
-                    <strong>Fast Recovery:</strong> In our experience, recovery
-                    is just as fast—if not faster—than traditional in-person
-                    sessions.
-                  </li>
-                  <li>
-                    <strong>No Waiting Lists:</strong> Avoid long delays—get
-                    seen within 24 hours, often on the same day.
-                  </li>
-                  <li>
-                    <strong>Cost-Effective:</strong> Save on travel expenses,
-                    reduce time off work, and benefit from affordable session
-                    rates.
-                  </li>
-                  <li>
-                    <strong>Ultimate Convenience:</strong> Schedule sessions
-                    around your lifestyle—before work, during lunch, or in the
-                    evening.
-                  </li>
-                  <li>
-                    <strong>Smart Digital Tools:</strong> Access a free,
-                    easy-to-use app with personalized exercise videos, progress
-                    tracking, and condition-specific assessments.
-                  </li>
-                  <li>
-                    <strong>Time-Saving:</strong> Spend more time doing what you
-                    love—with less disruption to your daily life, work, and
-                    family.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-              <div class="physio-card">
-                <h3>Can Online Physiotherapy Help with My Injury?</h3>
-                <p>
-                  Absolutely. Online physiotherapy is proven to help reduce
-                  pain, restore movement, and accelerate recovery—all from the
-                  comfort of your home.
-                </p>
-
-                <h4 class="mt-4">Common Conditions We Successfully Manage:</h4>
-                <div class="row mt-3">
-                  <div class="col-md-6">
-                    <div class="condition-item">
-                      <h4>Pre- & Post-Surgical Rehab</h4>
-                      <p>
-                        For shoulder, elbow, wrist, hand, spine, hip, knee, and
-                        ankle
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="condition-item">
-                      <h4>Sports Injuries</h4>
-                      <p>
-                        Ankle sprains, shoulder dislocations, knee pain,
-                        tendinopathies
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="condition-item">
-                      <h4>Pelvic Health</h4>
-                      <p>
-                        Pelvic pain, prenatal/postnatal care, bladder/bowel
-                        conditions
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="condition-item">
-                      <h4>Chronic Pain</h4>
-                      <p>Arthritis, back pain, repetitive strain injuries</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="text-center mt-4">
-                  <p>
-                    <strong
-                      >Still unsure if online physio is right for your
-                      injury?</strong
-                    >
-                  </p>
-                  <a
-                    href="contact.html"
-                    class="btn btn-primary rounded-pill text-white py-2 px-4"
-                    >Book a Free Screening Call</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Why Choose Online Section End -->
-
-    <!-- How Online Physio Works Section Start -->
-    <div class="container-fluid py-5">
-      <div class="container">
-        <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
-          <h1 class="display-3 mb-4">How Does Online Physiotherapy Work?</h1>
-          <p class="mb-0">
-            At WeCare-The Online Physiotherapist, we've reimagined the
-            physiotherapy experience—making it just as effective, more
-            convenient, and fully personalized.
-          </p>
-        </div>
-
-        <div class="step-container">
-          <div class="step wow fadeIn" data-wow-delay="0.2s">
-            <img
-              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGh5c2lvdGhlcmFweSUyMGFzc2Vzc21lbnR8ZW58MHx8MHx8fDA%3D"
-              alt="Step 1 Image"
-            />
-            <div class="step-content">
-              <div class="step-title">Step 1: Smart Injury Analysis</div>
-              <p>
-                We start by gathering detailed information about your
-                condition—your symptoms, medical history, lifestyle, and even
-                family history. This helps us form a clear clinical picture. In
-                fact, with the right questions, our expert physios are typically
-                90%+ confident in your diagnosis by this stage.
-              </p>
-            </div>
-          </div>
-
-          <div class="step wow fadeIn" data-wow-delay="0.3s">
-            <img
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGh5c2lvdGhlcmFweSUyMGV4YW18ZW58MHx8MHx8fDA%3D"
-              alt="Step 2 Image"
-            />
-            <div class="step-content">
-              <div class="step-title">
-                Step 2: Visual & Functional Assessment
-              </div>
-              <p>
-                Next, we guide you through a virtual assessment. You'll show us
-                how you move, press on specific areas, perform simple tests, and
-                demonstrate functional tasks. We evaluate posture, muscle
-                strength & flexibility, joint function, and movement quality.
-                It's interactive, accurate, and tailored to your injury.
-              </p>
-            </div>
-          </div>
-
-          <div class="step wow fadeIn" data-wow-delay="0.4s">
-            <img
-              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBoeXNpb3RoZXJhcHklMjBwbGFufGVufDB8fDB8fHww"
-              alt="Step 3 Image"
-            />
-            <div class="step-content">
-              <div class="step-title">
-                Step 3: Clear Diagnosis, Timelines & Treatment
-              </div>
-              <p>
-                Now that we know what we're dealing with, we deliver a recovery
-                timeframe that's realistic and motivating, science-backed advice
-                on what to avoid and what to focus on, and a custom rehab plan
-                created live with you using our advanced online platform. You'll
-                get access to your plan through an intuitive app—complete with
-                exercise videos, progress tracking, and injury-specific
-                guidance.
-              </p>
-            </div>
-          </div>
-
-          <div class="step wow fadeIn" data-wow-delay="0.5s">
-            <img
-              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGh5c2lvdGhlcmFweSUyMGZvbGxvd3VwfGVufDB8fDB8fHww"
-              alt="Step 4 Image"
-            />
-            <div class="step-content">
-              <div class="step-title">
-                Step 4: Guided Recovery & Ongoing Support
-              </div>
-              <p>
-                Healing doesn't stop after one session—and neither do we. We
-                schedule follow-up sessions to reassess and progress your rehab,
-                send you updated exercise programmes, offer ongoing email
-                support for questions and adjustments, and stay by your side
-                every step of the way.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- How Online Physio Works Section End -->
-
-    <!-- Conditions We Treat Section Start -->
-    <div class="container-fluid py-5" style="background-color: #f8f9fa">
-      <div class="container">
-        <div class="section wow fadeIn" data-wow-delay="0.1s">
-          <h2 class="text-center mb-5">Conditions We Treat</h2>
-          <p class="text-center lead mb-5">
-            "Empowering you to move freely and live fully."
-          </p>
-
-          <div class="row">
-            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-              <h4>PHYSIOTHERAPY – ANYTIME, ANYWHERE</h4>
-              <h3>How We Support You</h3>
-              <p>
-                Struggling with a recent ankle sprain, calf strain, shoulder
-                discomfort, persistent back pain, or ongoing knee issues?
-              </p>
-              <p>
-                We understand how frustrating and concerning these injuries can
-                be. Our goal is to identify the root cause, create a
-                personalized recovery plan, and address any barriers that may
-                prevent you from reaching your full recovery.
-              </p>
-              <p>
-                With The Online Physiotherapist, you often have access to
-                same-day appointments, so you can get started with a tailored
-                action plan immediately. Virtual sessions mean you can join from
-                wherever suits you best—whether that's pitch side, during your
-                lunch break, at home, or even while travelling!
-              </p>
-            </div>
-
-            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-              <div class="physio-card">
-                <h3>Our Expertise</h3>
-                <p>
-                  Our team brings extensive experience and specialist knowledge
-                  in areas such as:
-                </p>
-                <ul class="why-choose-list">
-                  <li>Sports and running injuries</li>
-                  <li>Post-operative rehab</li>
-                  <li>
-                    Mid-to-late stage rehabilitation for spinal cord injuries
-                    and stroke
-                  </li>
-                  <li>Pelvic and women's health</li>
-                  <li>Chronic pain management</li>
-                  <li>Work-related musculoskeletal disorders</li>
-                </ul>
-
-                <div class="highlight-box mt-4">
-                  <p>
-                    Evidence shows that early intervention by qualified
-                    professionals speeds up recovery and prevents minor injuries
-                    from turning into long-term problems. We don't lock you into
-                    a fixed number of sessions, and we won't pressure you to
-                    keep rebooking.
-                  </p>
-                  <h5>
-                    Our mission is simple: to help you return to the activities
-                    you love—quickly and confidently.
+          <!-- Physiotherapy at CoreMotion Flip Card -->
+          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGh5c2lvdGhlcmFweSUyMGFzc2Vzc21lbnR8ZW58MHx8MHx8fDA%3D"
+                    alt="Physiotherapy"
+                    class="img-fluid"
+                  />
+                  <h5 class="mt-3 text-secondary">
+                    Physiotherapy at CoreMotion
                   </h5>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="section mt-5 wow fadeIn" data-wow-delay="0.4s">
-            <h3 class="text-center mb-4">Injuries We Treat</h3>
-            <p class="text-center mb-5">
-              We manage a broad spectrum of injuries and conditions—essentially,
-              if it involves a muscle, joint, tendon, ligament, or nerve, we're
-              here to help!
-            </p>
-
-            <div class="row">
-              <div class="col-md-4 wow fadeIn" data-wow-delay="0.2s">
-                <div class="condition-item">
-                  <h4>Upper Body</h4>
-                  <ul>
-                    <li>Neck pain & whiplash</li>
-                    <li>Shoulder impingement</li>
-                    <li>Rotator cuff injuries</li>
-                    <li>Tennis/golfer's elbow</li>
-                    <li>Wrist sprains</li>
-                    <li>Carpal tunnel syndrome</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-md-4 wow fadeIn" data-wow-delay="0.3s">
-                <div class="condition-item">
-                  <h4>Spine & Core</h4>
-                  <ul>
-                    <li>Lower back pain</li>
-                    <li>Sciatica</li>
-                    <li>Scoliosis</li>
-                    <li>Herniated discs</li>
-                    <li>Postural dysfunction</li>
-                    <li>Post-surgical rehab</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-md-4 wow fadeIn" data-wow-delay="0.4s">
-                <div class="condition-item">
-                  <h4>Lower Body</h4>
-                  <ul>
-                    <li>Hip pain & bursitis</li>
-                    <li>Knee ligament injuries</li>
-                    <li>Meniscus tears</li>
-                    <li>Patellofemoral pain</li>
-                    <li>Ankle sprains</li>
-                    <li>Achilles tendinopathy</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Conditions We Treat Section End -->
-
-    <!-- ErgoPhysio Section Start -->
-    <div class="container-fluid ergo-section">
-      <div class="container">
-        <div class="section wow fadeIn" data-wow-delay="0.1s">
-          <h2 class="text-center mb-5">ErgoPhysio</h2>
-          <p class="text-center lead mb-5">
-            Digital physiotherapy and ergonomic solutions tailored for your
-            workplace.
-          </p>
-
-          <div class="row">
-            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-              <div class="physio-card">
-                <h3>What is ErgoPhysio?</h3>
-                <p>
-                  ErgoPhysio provides ergonomic assessments alongside expert
-                  physiotherapy services for your employees. Tailored for
-                  businesses of all sizes, it's designed to proactively
-                  safeguard and enhance the health and well-being of your
-                  workforce.
-                </p>
-                <p>
-                  Whether your employees are in the office or working remotely,
-                  our online ergonomic and physiotherapy sessions are crafted
-                  for efficiency, convenience, high-quality care, and immediate,
-                  actionable results.
-                </p>
-              </div>
-
-              <div class="physio-card mt-4">
-                <h3>How We Help</h3>
-                <p>
-                  We have simplified the process of booking consultations with
-                  WeCare The Online Physiotherapist into a straightforward
-                  3-step procedure:
-                </p>
-                <ol>
-                  <li>
-                    <strong>Step 1:</strong> The employee schedules their
-                    ErgoPhysio assessment through our user-friendly online
-                    system.
-                  </li>
-                  <li>
-                    <strong>Step 2:</strong> Following the ergonomic assessment,
-                    the employee receives tailored recommendations and books
-                    their physiotherapy assessment, all delivered virtually.
-                  </li>
-                  <li>
-                    <strong>Step 3:</strong> The employer is provided with the
-                    ergonomic recommendations, while the employee receives a
-                    customized physiotherapy action plan to treat and/or prevent
-                    injuries.
-                  </li>
-                </ol>
-              </div>
-            </div>
-
-            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-              <div class="physio-card">
-                <h3>Why Does My Organization Need ErgoPhysio?</h3>
-                <p>
-                  Our ErgoPhysio service integrates smoothly into your
-                  employees' workday. With no delays, travel expenses, or time
-                  off required, it's designed to align perfectly with the
-                  demands of your business.
-                </p>
-                <p>
-                  When your employees receive personalized support and guidance
-                  from our experienced physiotherapists, they will feel more
-                  valued in their positions. As a result, your business will
-                  experience increased confidence, productivity, energy, and a
-                  positive, proactive attitude.
-                </p>
-
-                <div class="highlight-box mt-4">
-                  <h4>The Benefits of Being Proactive</h4>
+                <div class="flip-card-back">
+                  <h5>What is Physiotherapy?</h5>
                   <p>
-                    Healthy employees are crucial to the success of your
-                    business. Good health boosts efficiency, productivity,
-                    individual confidence, and overall workplace morale, helping
-                    your business excel and maintain a competitive advantage.
-                  </p>
-                  <p>
-                    As qualified physiotherapists and ergonomists, we understand
-                    how poor ergonomics can create a negative cycle that harms
-                    productivity.
-                  </p>
-                  <p>
-                    Research indicates that taking a proactive approach rather
-                    than waiting for issues to arise brings significant benefits
-                    to your organization. These include better employee health,
-                    improved staff retention, more time, reduced stress, and
-                    most importantly, a positive impact on your company's bottom
-                    line.
-                  </p>
-                </div>
-              </div>
-
-              <div class="physio-card mt-4">
-                <h3>Reasons to Choose WeCare-The Online Physiotherapist</h3>
-                <ul class="why-choose-list">
-                  <li>
-                    We are a team of IAP registered Physiotherapists with
-                    extensive experience across India and UK NHS, humanitarian
-                    work, and the private sector.
-                  </li>
-                  <li>
-                    With specialists in every key area of the body, we ensure
-                    you receive top-tier care.
-                  </li>
-                  <li>
-                    We've assisted thousands of employees in overcoming injuries
-                    and improving their health at work.
-                  </li>
-                  <li>
-                    Our service combines ergonomic guidance with physiotherapy
-                    assessments, addressing all aspects of occupational health.
-                  </li>
-                  <li>
-                    With virtual physiotherapy sessions, we offer maximum
-                    flexibility while saving your business both time and money.
-                  </li>
-                  <li>
-                    Our commitment is to support your business by prioritizing
-                    the health and well-being of your teams and organization.
-                  </li>
-                </ul>
-
-                <div class="text-center mt-4">
-                  <h4>Learn More About ErgoPhysio</h4>
-                  <p>
-                    We take great pride in our ErgoPhysio health program and are
-                    eager to help you invest in the well-being of your
-                    employees. To begin, schedule a discovery call, and we'll
-                    walk you through how we can support your team and create
-                    lasting positive impact for your business.
+                    An evidence-based healthcare profession focused on restoring
+                    movement, reducing pain, and improving quality of life. Our
+                    approach is active, movement-based rehabilitation combined
+                    with science-backed advice and cutting-edge technology.
                   </p>
                   <a
-                    href="contact.html"
-                    class="btn btn-primary rounded-pill text-white py-2 px-4"
-                    >Contact Us Today</a
+                    href="#physiotherapy-details"
+                    class="btn btn-primary btn-sm mt-3"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conditions We Treat Flip Card -->
+          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://images.unsplash.com/photo-1542880798-e737c5ce9c2e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGluanVyeSUyMGxpZmUlMjBkb2N0b3J8ZW58MHx8MHx8fDA%3D"
+                    alt="Conditions We Treat"
+                    class="img-fluid"
+                  />
+                  <h5 class="mt-3 text-secondary">Conditions We Treat</h5>
+                </div>
+                <div class="flip-card-back">
+                  <h5>Comprehensive Care</h5>
+                  <p>
+                    We treat a wide range of conditions including sports
+                    injuries, post-surgical rehab, chronic pain, workplace
+                    problems, women's health issues, and more. Our online
+                    approach ensures effective recovery from home.
+                  </p>
+                  <a
+                    href="#conditions-we-treat-details"
+                    class="btn btn-primary btn-sm mt-3"
+                    >View All</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ergonomics at CoreMotion Flip Card -->
+          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://images.unsplash.com/photo-1629562772580-c1240f951590?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZXJnb25vbWljc3xlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Ergonomics"
+                    class="img-fluid"
+                  />
+                  <h5 class="mt-3 text-secondary">Ergonomics at CoreMotion</h5>
+                </div>
+                <div class="flip-card-back">
+                  <h5>Workplace Wellness</h5>
+                  <p>
+                    Tailored ergonomic assessments and physiotherapy for your
+                    workplace. We help prevent common "hustle culture" pains
+                    like stiff necks, sore backs, and wrist issues, boosting
+                    productivity and well-being.
+                  </p>
+                  <a
+                    href="#ergonomics-details"
+                    class="btn btn-primary btn-sm mt-3"
+                    >Discover</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EduHub: Learn With Us Flip Card -->
+          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGVkdWNhdGlvbiUyMGh1YnxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="EduHub"
+                    class="img-fluid"
+                  />
+                  <h5 class="mt-3 text-secondary">EduHub: Learn With Us</h5>
+                </div>
+                <div class="flip-card-back">
+                  <h5>Knowledge is Power</h5>
+                  <p>
+                    Explore our Education Hub for valuable resources: tips to
+                    improve posture, injury prevention guides, home & workplace
+                    ergonomics advice, expert Q&As, and rehab resources to
+                    empower your health journey.
+                  </p>
+                  <a href="#eduhub-details" class="btn btn-primary btn-sm mt-3"
+                    >Explore</a
                   >
                 </div>
               </div>
@@ -1432,553 +716,826 @@
         </div>
       </div>
     </div>
-    <!-- ErgoPhysio Section End -->
+    <!-- Services Section End -->
 
-    <!-- Feature Start -->
-    <div class="container-fluid feature py-5">
+    <!-- Physiotherapy at CoreMotion Section Start -->
+    <div class="container-fluid physio-section py-5" id="physiotherapy-details">
       <div class="container py-5">
-        <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
-          <div class="sub-style">
-            <h4 class="sub-title px-3 mb-0">benefits</h4>
+        <div class="section-title mb-5 text-center wow fadeInUp">
+          <div class="sub-style mx-auto">
+            <h4 class="sub-title px-3 mb-0">Our Core Service</h4>
           </div>
-          <h1 class="display-3 mb-4">The benefits of online physiotherapy</h1>
-          <p class="mb-0">
-            At WeCare the Online Physiotherapist, we deliver full physiotherapy
-            assessments and personalised rehab plans for injuries from sport,
-            daily life, or surgery – all online.
+          <h1 class="display-3 mb-4">Physiotherapy at CoreMotion</h1>
+          <p class="mb-0 lead">
+            🩺 Physiotherapy is an evidence-based healthcare profession focused
+            on restoring movement, reducing pain, and improving quality of life.
+            At CoreMotion, our approach is active, movement-based rehabilitation
+            combined with science-backed advice and cutting-edge technology.
           </p>
         </div>
-        <div class="row g-4 justify-content-center">
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.1s"
-          >
-            <div class="row-cols-1 feature-item p-4">
-              <div class="col-12">
-                <div class="feature-icon mb-4">
-                  <div class="p-3 d-inline-flex bg-white rounded">
-                    <i class="fas fa-diagnoses fa-4x text-primary"></i>
-                  </div>
-                </div>
-                <div class="feature-content d-flex flex-column">
-                  <h5 class="mb-4">Save Time and Money</h5>
-                  <p class="mb-0">
-                    Our online sessions are quicker and more flexible—no need to
-                    miss work or pay for travel.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <div class="row-cols-1 feature-item p-4">
-              <div class="col-12">
-                <div class="feature-icon mb-4">
-                  <div class="p-3 d-inline-flex bg-white rounded">
-                    <i class="fas fa-briefcase-medical fa-4x text-primary"></i>
-                  </div>
-                </div>
-                <div class="feature-content d-flex flex-column">
-                  <h5 class="mb-4">Support You Can Trust</h5>
-                  <p class="mb-0">
-                    We’re here for you with kindness, patience, and
-                    understanding at every stage of your recovery.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <div class="row-cols-1 feature-item p-4">
-              <div class="col-12">
-                <div class="feature-icon mb-4">
-                  <div class="p-3 d-inline-flex bg-white rounded">
-                    <i class="fas fa-hospital-user fa-4x text-primary"></i>
-                  </div>
-                </div>
-                <div class="feature-content d-flex flex-column">
-                  <h5 class="mb-4">Our Immediate Access to Care</h5>
-                  <p class="mb-0">
-                    Immediate Access to Care Start your treatment right away.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <div class="row-cols-1 feature-item p-4">
-              <div class="col-12">
-                <div class="feature-icon mb-4">
-                  <div class="p-3 d-inline-flex bg-white rounded">
-                    <i class="fas fa-users fa-4x text-primary"></i>
-                  </div>
-                </div>
-                <div class="feature-content d-flex flex-column">
-                  <h5 class="mb-4">Expert Care, No Matter Where You Are</h5>
-                  <p class="mb-0">
-                    Get specialized treatment for your injury from anywhere.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.1s"
-          >
-            <div class="row-cols-1 feature-item p-4">
-              <div class="col-12">
-                <div class="feature-icon mb-4">
-                  <div class="p-3 d-inline-flex bg-white rounded">
-                    <i class="fas fa-spa fa-4x text-primary"></i>
-                  </div>
-                </div>
-                <div class="feature-content d-flex flex-column">
-                  <h5 class="mb-4">Comfortable Center</h5>
-                  <p class="mb-0">
-                    Comfortable center designed for healing, relaxation,
-                    support, and personalized physiotherapy care.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div -->
-          <!-- class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <div class="row-cols-1 feature-item p-4">
-              <div class="col-12">
-                <div class="feature-icon mb-4">
-                  <div class="p-3 d-inline-flex bg-white rounded">
-                    <i class="fas fa-heart fa-4x text-primary"></i>
-                  </div>
-                </div>
-                <div class="feature-content d-flex flex-column">
-                  <h5 class="mb-4">Experienced Stuff</h5>
-                  <p class="mb-0">
-                    Skilled, certified professionals providing expert
-                    physiotherapy care with compassion.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div
-            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <div class="row-cols-1 feature-item p-4">
-              <div class="col-12">
-                <div class="feature-icon mb-4">
-                  <div class="p-3 d-inline-flex bg-white rounded">
-                    <i class="fab fa-pied-piper fa-4x text-primary"></i>
-                  </div>
-                </div>
-                <div class="feature-content d-flex flex-column">
-                  <h5 class="mb-4">Broader Therapist Options</h5>
-                  <p class="mb-0">
-                    Access to a wider range of specialists who may not be locally available.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div -->
-          <!-- class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <div class="row-cols-1 feature-item p-4">
-              <div class="col-12">
-                <div class="feature-icon mb-4">
-                  <div class="p-3 d-inline-flex bg-white rounded">
-                    <i class="fas fa-user-md fa-4x text-primary"></i>
-                  </div>
-                </div>
-                <div class="feature-content d-flex flex-column">
-                  <h5 class="mb-4">Comfort and Privacy</h5>
-                  <p class="mb-0">
-                    Online sessions can offer more privacy, which is valued by some individuals.
-                  </p>
-                </div>
-              </div>
-            </div> -->
-        </div>
-        <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-          <br /><a
-            href="#"
-            class="btn btn-primary rounded-pill text-white py-3 px-5"
-            >More Details</a
-          >
-        </div>
-      </div>
-    </div>
-    <!-- </div> -->
-    <!-- Feature End -->
 
-    <!-- Consultation Section Start -->
-    <div class="container">
-      <div class="section wow fadeIn" data-wow-delay="0.1s">
-        <h2 class="text-center mb-4">
-          Need More Information? We're Here to Help!
-        </h2>
-        <div class="row">
+        <div class="row g-5 align-items-center mb-5">
           <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-            <p>
-              We understand you may be new to online physiotherapy, but clinical
-              research shows it's just as effective as in-person visits for most
-              injuries.
-            </p>
-            <p>
-              As experienced musculoskeletal specialists, we've helped countless
-              people recover quickly.
-            </p>
-            <p>
-              With our expertise in telemedicine, we diagnose accurately,
-              recommend effective home exercises, and create personalized
-              recovery plans—all online.
-            </p>
-          </div>
-          <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-            <p>
-              Using cutting-edge technology, AI, and rehab software, we
-              accelerate your recovery process.
-            </p>
-            <div class="highlight-box">
-              <h4>Begin Your Online Physiotherapy Journey</h4>
-              <p>
-                From aches and pains to sciatica, sports injuries, or accidents,
-                The Online Physiotherapist is ready to assist. Schedule your
-                online assessment today.
-              </p>
-            </div>
-            <div class="text-center mt-4">
-              <a
-                href="appointment.html"
-                class="btn btn-primary rounded-pill text-white py-3 px-5 pulse"
-                >Book Your Consultation Now</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="section form-section wow fadeIn"
-        data-wow-delay="0.4s"
-        id="form"
-      >
-        <h2 class="text-center mb-4">Is Online Physio Right for Me?</h2>
-        <p class="text-center mb-4">
-          Fill out this quick form and we'll let you know!
-        </p>
-
-        <form action="#" method="POST" class="wow fadeIn" data-wow-delay="0.5s">
-          <div class="row">
-            <div class="col-md-6">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="col-md-6">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-          </div>
-
-          <label for="condition">Brief Description of Your Condition</label>
-          <textarea
-            id="condition"
-            name="condition"
-            rows="4"
-            required
-          ></textarea>
-
-          <div class="text-center">
-            <input
-              type="submit"
-              value="Submit"
-              class="btn btn-primary rounded-pill text-white py-3 px-5"
+            <img
+              src="https://images.unsplash.com/photo-1533722271887-b9560f64c676?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fHdoeSUyMHBoeXNpb3RoZXJhcHl8ZW58MHx8MHx8fDA%3D"
+              class="img-fluid rounded-pill shadow-lg"
+              alt="When to consider Physiotherapy"
             />
           </div>
-        </form>
-      </div>
-    </div>
-    <!-- Consultation Section End -->
-
-    <!-- Testimonial Start -->
-    <div
-      class="container-fluid testimonial py-5 wow zoomInDown"
-      data-wow-delay="0.1s"
-    >
-      <div class="container py-5">
-        <div class="section-title mb-5">
-          <div class="sub-style">
-            <h4 class="sub-title text-white px-3 mb-0">Testimonial</h4>
+          <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+            <h3>⚡ When and Why Do You Need Physiotherapy?</h3>
+            <p>You may benefit from physiotherapy if you:</p>
+            <ul class="why-choose-list">
+              <li>Experience pain or stiffness that limits movement</li>
+              <li>Have suffered an injury or undergone surgery</li>
+              <li>Struggle with posture-related problems at work</li>
+              <li>Want to prevent future injuries and stay active</li>
+            </ul>
+            <p class="text-primary fw-bold">
+              Early intervention is key — it leads to faster recovery, less
+              pain, and a lower risk of long-term complications.
+            </p>
           </div>
-          <h1 class="display-3 mb-4">What Clients are Say</h1>
         </div>
-        <div class="testimonial-carousel owl-carousel">
-          <div class="testimonial-item">
-            <div class="testimonial-inner p-5">
-              <div class="testimonial-inner-img mb-4">
-                <img
-                  src="img/testimonial-img.jpg"
-                  class="img-fluid rounded-circle"
-                  alt=""
-                />
+
+        <div class="row g-5 align-items-center flex-row-reverse mb-5">
+          <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
+            <img
+              src="https://images.unsplash.com/photo-1549414272-35a9d201e52f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG9ubGluZSUyMHBoeXNpb3RoZXJhcHl8ZW58MHx8MHx8fDA%3D"
+              class="img-fluid rounded-pill shadow-lg"
+              alt="Online Physiotherapy"
+            />
+          </div>
+          <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.4s">
+            <h3>💻 Can Physiotherapy Be Done Online?</h3>
+            <p>
+              Yes. With today’s tools, physiotherapy is just as accurate and
+              effective online as it is face-to-face. Diagnosis doesn’t depend
+              only on hands-on techniques, but on the right process:
+            </p>
+            <h5>How Online Diagnosis Works:</h5>
+            <ol>
+              <li>
+                <strong>History</strong> – detailed questions about symptoms,
+                injury, lifestyle, and medical background
+              </li>
+              <li>
+                <strong>Observation</strong> – guided movements & posture checks
+                over video
+              </li>
+              <li>
+                <strong>Self-Tests</strong> – safe, therapist-directed checks
+                for muscles, joints, and flexibility
+              </li>
+              <li>
+                <strong>Confirmation</strong> – combining findings to give you a
+                clear diagnosis and plan
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="section wow fadeIn" data-wow-delay="0.1s">
+          <h2 class="text-center mb-5">
+            🔑 How CoreMotion Physiotherapy Works
+          </h2>
+          <div class="step-container">
+            <div class="step wow fadeIn" data-wow-delay="0.2s">
+              <img
+                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGh5c2lvdGhlcmFweSUyMGFzc2Vzc21lbnR8ZW58MHx8MHx8fDA%3D"
+                alt="Step 1 Image"
+              />
+              <div class="step-content">
+                <div class="step-title">Step 1: Comprehensive Assessment</div>
+                <p>
+                  We start by gathering detailed information about your
+                  condition—your symptoms, medical history, lifestyle, and even
+                  family history. This helps us form a clear clinical picture.
+                </p>
               </div>
-              <p class="text-white fs-7">
-                I've been struggling with back pain for years, and online
-                physiotherapy has been a game-changer. The personalized
-                treatment plan, combined with expert guidance, helped me recover
-                faster than I expected. I can finally move without pain and
-                enjoy daily activities again. The team is professional, caring,
-                and really takes the time to listen. Highly recommend!
+            </div>
+
+            <div class="step wow fadeIn" data-wow-delay="0.3s">
+              <img
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGh5c2lvdGhlcmFweSUyMGV4YW18ZW58MHx8MHx8fDA%3D"
+                alt="Step 2 Image"
+              />
+              <div class="step-content">
+                <div class="step-title">
+                  Step 2: Accurate Diagnosis with Technology
+                </div>
+                <p>Through video assessments, posture analysis</p>
+              </div>
+            </div>
+
+
+            <div class="step wow fadeIn" data-wow-delay="0.4s">
+                  <img
+                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBoeXNpb3RoZXJhcHklMjBwbGFufGVufDB8fDB8fHww"
+                    alt="Step 3 Image"
+                  />
+                  <div class="step-content">
+                    <div class="step-title">
+                      Step 3: Tailored Treatment Plan
+                    </div>
+                    <p>
+                      We create a personalised rehab program using interactive
+                      digital platforms — complete with exercise videos,
+                      reminders, and progress tracking.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="step wow fadeIn" data-wow-delay="0.5s">
+                  <img
+                    src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGh5c2lvdGhlcmFweSUyMGZvbGxvd3VwfGVufDB8fDB8fHww"
+                    alt="Step 4 Image"
+                  />
+                  <div class="step-content">
+                    <div class="step-title">
+                      Step 4: Ongoing Support & Innovation
+                    </div>
+                    <p>
+                      We monitor your progress with software, adjust your plan
+                      as you recover, and use data-driven insights to ensure
+                      faster, safer, and long-lasting results.
+                    </p>
+                  </div>
+                </div>
+          </div>
+        </div>
+        <!-- Physiotherapy at CoreMotion Section End -->
+
+        <!-- Conditions We Treat Section Start -->
+        <div
+          class="container-fluid py-5 bg-light"
+          id="conditions-we-treat-details"
+        >
+          <div class="container py-5">
+            <div class="section-title mb-5 text-center wow fadeInUp">
+              <div class="sub-style mx-auto">
+                <h4 class="sub-title px-3 mb-0">Our Expertise</h4>
+              </div>
+              <h1 class="display-3 mb-4">🩺 Conditions We Treat</h1>
+              <p class="mb-0 lead">
+                At CoreMotion, we use guided video consultations, structured
+                exercise programs, and rehab software to treat a wide range of
+                conditions. Research shows that telerehabilitation can be as
+                effective as in-clinic care for many of these, giving you the
+                freedom to recover from home without delays.
               </p>
-              <div class="text-center">
-                <h5 class="mb-2">John Abraham</h5>
-                <p class="mb-2 text-white-50">New York, USA</p>
-                <div class="d-flex justify-content-center">
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+              <!-- Sports & Musculoskeletal Injuries -->
+              <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                <div class="condition-item">
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-running fa-2x text-primary me-3"></i>
+                    <h4 class="mb-0">Sports & Musculoskeletal Injuries</h4>
+                  </div>
+                  <p>
+                    Sprains, strains, muscle tears, ligament problems (ACL,
+                    Achilles, rotator cuff), overuse injuries (runner’s knee,
+                    tennis/golfer’s elbow), and post-fracture recovery.
+                  </p>
+                  <p class="text-muted small">
+                    Studies have shown that exercise-based physiotherapy
+                    programs delivered remotely can achieve recovery outcomes
+                    comparable to in-person therapy.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Post-Surgical Rehabilitation -->
+              <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.2s">
+                <div class="condition-item">
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-hospital fa-2x text-primary me-3"></i>
+                    <h4 class="mb-0">Post-Surgical Rehabilitation</h4>
+                  </div>
+                  <p>
+                    Structured recovery after knee or hip replacement, ACL and
+                    meniscus surgery, spine procedures, shoulder repairs, and
+                    ankle or wrist surgeries.
+                  </p>
+                  <p class="text-muted small">
+                    Evidence shows that patients who follow supervised
+                    home-based rehab programs recover strength and mobility just
+                    as well as those who attend clinic sessions, while saving
+                    time and effort.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Chronic Pain & Arthritis -->
+              <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                <div class="condition-item">
+                  <div class="d-flex align-items-center mb-3">
+                    <i
+                      class="fas fa-clinic-medical fa-2x text-primary me-3"
+                    ></i>
+                    <h4 class="mb-0">Chronic Pain & Arthritis</h4>
+                  </div>
+                  <p>
+                    Back pain, neck stiffness, sciatica, slipped discs,
+                    arthritis (osteoarthritis, rheumatoid), and posture-related
+                    headaches.
+                  </p>
+                  <p class="text-muted small">
+                    Virtual physiotherapy programs, including exercise and
+                    education, have been proven effective in reducing pain and
+                    improving quality of life for people living with chronic
+                    conditions.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Workplace & Ergonomic Problems -->
+              <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.4s">
+                <div class="condition-item">
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-briefcase fa-2x text-primary me-3"></i>
+                    <h4 class="mb-0">Workplace & Ergonomic Problems</h4>
+                  </div>
+                  <p>
+                    Desk-job pain, repetitive strain injuries (RSI), wrist/hand
+                    pain, neck and shoulder stiffness, and posture issues.
+                  </p>
+                  <p class="text-muted small">
+                    Corrective exercise, posture training, and ergonomic advice
+                    provided remotely can significantly reduce workplace pain
+                    and improve daily comfort.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Women’s Health & Pelvic Care -->
+              <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                <div class="condition-item">
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-venus fa-2x text-primary me-3"></i>
+                    <h4 class="mb-0">Women’s Health & Pelvic Care</h4>
+                  </div>
+                  <p>
+                    Pregnancy-related back and pelvic pain, post-natal
+                    rehabilitation (core recovery, abdominal separation, pelvic
+                    floor), and pelvic pain disorders.
+                  </p>
+                  <p class="text-muted small">
+                    Guided physiotherapy programs allow women to safely recover
+                    strength and function after childbirth, with proven
+                    improvements in core stability and pelvic health.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Older Adults & Mobility Care -->
+              <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.6s">
+                <div class="condition-item">
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-wheelchair fa-2x text-primary me-3"></i>
+                    <h4 class="mb-0">Older Adults & Mobility Care</h4>
+                  </div>
+                  <p>
+                    Mobility decline, balance training, fall prevention, and
+                    independence-focused strengthening.
+                  </p>
+                  <p class="text-muted small">
+                    Research confirms that balance and walking programs
+                    delivered at home through guided physiotherapy help older
+                    adults improve mobility and reduce fall risk.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Neurological & Nerve Conditions -->
+              <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.7s">
+                <div class="condition-item">
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-brain fa-2x text-primary me-3"></i>
+                    <h4 class="mb-0">Neurological & Nerve Conditions</h4>
+                  </div>
+                  <p>
+                    Stroke rehabilitation (for mild-to-moderate or long-term
+                    recovery), carpal tunnel syndrome, peripheral nerve
+                    injuries, and coordination retraining.
+                  </p>
+                  <p class="text-muted small">
+                    Large clinical studies have shown that structured,
+                    home-based stroke rehab programs guided by physiotherapists
+                    can restore motor function almost as effectively as
+                    in-clinic care.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Spinal & Joint Disorders -->
+              <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.8s">
+                <div class="condition-item">
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-bone fa-2x text-primary me-3"></i>
+                    <h4 class="mb-0">Spinal & Joint Disorders</h4>
+                  </div>
+                  <p>
+                    Disc problems, scoliosis-related pain, frozen shoulder, hip
+                    and knee degeneration.
+                  </p>
+                  <p class="text-muted small">
+                    Movement-based rehabilitation has been proven to reduce
+                    pain, restore mobility, and prevent further degeneration
+                    when followed consistently with therapist guidance.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Preventive & Wellness Programs -->
+              <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.9s">
+                <div class="condition-item">
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-shield-alt fa-2x text-primary me-3"></i>
+                    <h4 class="mb-0">Preventive & Wellness Programs</h4>
+                  </div>
+                  <p>
+                    Injury prevention for athletes, posture correction,
+                    workplace wellness, and lifestyle-based mobility training.
+                  </p>
+                  <p class="text-muted small">
+                    Digital exercise programs with regular follow-up help people
+                    stay consistent and prevent relapses or new injuries,
+                    building long-term strength and resilience.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stroke Rehabilitation Online at CoreMotion Sub-section -->
+            <div class="section mt-5 wow fadeInUp" data-wow-delay="0.1s">
+              <h3 class="text-center mb-4">
+                🧠 Stroke Rehabilitation Online at CoreMotion
+              </h3>
+              <p class="text-center lead mb-4">
+                Stroke recovery is about regaining movement, independence, and
+                confidence. With guided video consultations and specialised
+                rehab software, CoreMotion helps stroke survivors continue their
+                recovery journey safely from home.
+              </p>
+
+              <div class="row g-4 align-items-center">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                  <h4>✅ How We Deliver Stroke Rehab Online</h4>
+                  <ol class="list-group list-group-flush mt-3">
+                    <li class="list-group-item">
+                      <strong>Comprehensive Assessment:</strong> We assess
+                      mobility, balance, strength, and coordination through
+                      video calls. Family or caregivers can join sessions for
+                      added support.
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Tailored Home Exercise Programs:</strong>
+                      Strengthening and stretching for the affected side of the
+                      body, balance and coordination training (using safe,
+                      home-friendly movements), fine motor retraining (hand,
+                      grip, reaching tasks).
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Rehab Software & Video Guidance:</strong> Exercise
+                      demonstrations with clear videos, progress tracking and
+                      reminders, adaptable programs updated as you improve.
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Caregiver Involvement:</strong> We guide
+                      caregivers to assist during exercises where needed,
+                      ensuring safety and motivation for patients.
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Ongoing Support:</strong> Regular follow-ups to
+                      monitor progress, adjustments to programs as recovery
+                      advances, collaboration with other healthcare providers if
+                      required.
+                    </li>
+                  </ol>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                  <div class="physio-card h-100">
+                    <h3>🌟 Benefits of Online Stroke Rehab</h3>
+                    <ul class="why-choose-list">
+                      <li>Access therapy without the need for travel</li>
+                      <li>
+                        Rehab sessions adapted to the real home environment
+                      </li>
+                      <li>
+                        Involves and trains caregivers for ongoing support
+                      </li>
+                      <li>Encourages independence in daily living tasks</li>
+                      <li>
+                        Ideal for mild-to-moderate stroke patients or long-term
+                        recovery
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="testimonial-item">
-            <div class="testimonial-inner p-5">
-              <div class="testimonial-inner-img mb-4">
+        </div>
+        <!-- Conditions We Treat Section End -->
+
+        <!-- Ergonomics at CoreMotion Section Start -->
+        <div class="container-fluid ergo-section py-5" id="ergonomics-details">
+          <div class="container py-5">
+            <div class="section-title mb-5 text-center wow fadeInUp">
+              <div class="sub-style mx-auto">
+                <h4 class="sub-title px-3 mb-0">Optimize Your Workspace</h4>
+              </div>
+              <h1 class="display-3 mb-4">💻 Ergonomics at CoreMotion</h1>
+              <p class="mb-0 lead">
+                Digital physiotherapy and ergonomic solutions tailored for your
+                workplace.
+              </p>
+            </div>
+
+            <div class="row g-5 align-items-center mb-5">
+              <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
                 <img
-                  src="img/testimonial-img.jpg"
-                  class="img-fluid rounded-circle"
-                  alt=""
+                  src="https://images.unsplash.com/photo-1596547167667-a2f073994c50?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGh1c3RsZXxlbnwwfHwwfHx8MA%3D%3D"
+                  class="img-fluid rounded-pill shadow-lg"
+                  alt="The Hustle is Real"
                 />
               </div>
-              <p class="text-white fs-7">
-                After my knee surgery, I was nervous about my recovery, but the
-                physiotherapy team made it seamless. The online sessions were
-                incredibly convenient, and the therapist provided clear
-                instructions for every exercise. I've regained strength and
-                mobility quicker than anticipated. The support and encouragement
-                I received throughout the process were invaluable. I'm back to
-                doing what I love, pain-free!
+              <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                <h3>💻 The Hustle is Real</h3>
+                <p>
+                  We get it. Everyone’s out here grinding — long hours at the
+                  laptop, chasing deadlines, building start-ups, managing side
+                  hustles, gym after work, repeat. The hustle culture is alive,
+                  and you’re on fire doing amazing things.
+                </p>
+                <p class="text-danger fw-bold">
+                  🚨 But here’s the truth no one talks about: behind the success
+                  stories, our bodies are paying the price — stiff necks, sore
+                  backs, wrists on fire, headaches that just won’t quit.
+                </p>
+              </div>
+            </div>
+
+            <div class="row g-5 align-items-center flex-row-reverse mb-5">
+              <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
+                <img
+                  src="https://images.unsplash.com/photo-1590403061614-b633943f5cf7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHdvcmtpbmdlcnR5bWl8ZW58MHx8MHx8fDA%3D"
+                  class="img-fluid rounded-pill shadow-lg"
+                  alt="Why Ergonomics Matters"
+                />
+              </div>
+              <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.4s">
+                <h3>⚡ Why Ergonomics Matters for the Hustlers</h3>
+                <p>
+                  The body wasn’t built for 12-hour screen days. Hustle without
+                  care = burnout. That’s why we believe ergonomics is the secret
+                  weapon for Gen-Z achievers:
+                </p>
+                <ul class="why-choose-list">
+                  <li>
+                    It keeps your energy high so you can actually enjoy your
+                    wins.
+                  </li>
+                  <li>
+                    It stops pain before it turns into a problem that slows you
+                    down.
+                  </li>
+                  <li>
+                    It makes sure you’re investing in long-term health while
+                    you’re busy investing in your future.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="section wow fadeInUp" data-wow-delay="0.1s">
+              <h3 class="text-center mb-4">
+                👩‍⚕️ CoreMotion Has Your Back (Literally)
+              </h3>
+              <p class="text-center lead mb-4">
+                We’re not here with boring posture lectures. We’re here with
+                solutions that fit your life:
               </p>
-              <div class="text-center">
-                <h5 class="mb-2">Jack Abraham</h5>
-                <p class="mb-2 text-white-50">New York, USA</p>
-                <div class="d-flex justify-content-center">
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
+              <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.2s">
+                  <div class="physio-card text-center">
+                    <i class="fas fa-desktop fa-3x text-primary mb-3"></i>
+                    <h5>Workstation Makeovers</h5>
+                    <p class="mb-0">
+                      Quick, practical hacks for your desk, laptop, or gaming
+                      setup.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                  <div class="physio-card text-center">
+                    <i
+                      class="fas fa-hourglass-half fa-3x text-primary mb-3"
+                    ></i>
+                    <h5>Micro-Break Routines</h5>
+                    <p class="mb-0">
+                      2-minute resets that boost energy without breaking focus.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.4s">
+                  <div class="physio-card text-center">
+                    <i class="fas fa-user-friends fa-3x text-primary mb-3"></i>
+                    <h5>Posture Coaching</h5>
+                    <p class="mb-0">
+                      Modern, real-world tips (no more “sit up straight”
+                      clichés).
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                  <div class="physio-card text-center">
+                    <i
+                      class="fas fa-hand-holding-heart fa-3x text-primary mb-3"
+                    ></i>
+                    <h5>Pain-Proofing for Hustlers</h5>
+                    <p class="mb-0">
+                      Teaching you how to work hard without breaking down.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="testimonial-item">
-            <div class="testimonial-inner p-5">
-              <div class="testimonial-inner-img mb-4">
-                <img
-                  src="img/testimonial-img.jpg"
-                  class="img-fluid rounded-circle"
-                  alt=""
-                />
-              </div>
-              <p class="text-white fs-7">
-                I had chronic shoulder pain that affected my work and daily
-                life. Thanks to the personalized physiotherapy sessions, I'm
-                finally pain-free. The support and expertise provided made all
-                the difference in my recovery. I can't thank the team enough for
-                their guidance and care!
-              </p>
-              <div class="text-center">
-                <h5 class="mb-2">Den Abraham</h5>
-                <p class="mb-2 text-white-50">New York, USA</p>
-                <div class="d-flex justify-content-center">
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
-                  <i class="fas fa-star text-secondary"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Testimonial End -->
 
-    <!-- Footer Start -->
-    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-      <div class="container py-5">
-        <div class="row g-5">
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item d-flex flex-column">
-              <h4 class="text-white mb-4"><i></i>We Care</h4>
-              <p>
-                At We-Care, we believe healing should be accessible, personal,
-                and convenient. Our online physiotherapy services are designed
-                to bring expert care to your home.
-              </p>
-              <div class="d-flex align-items-center">
-                <i class="fas fa-share fa-2x text-white me-2"></i>
-                <a
-                  class="btn-square btn btn-primary text-white rounded-circle mx-1"
-                  href=""
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a
-                  class="btn-square btn btn-primary text-white rounded-circle mx-1"
-                  href=""
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a
-                  class="btn-square btn btn-primary text-white rounded-circle mx-1"
-                  href=""
-                  ><i class="fab fa-instagram"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item d-flex flex-column">
-              <h4 class="mb-4 text-white">Quick Links</h4>
-              <a href=""><i class="fas fa-angle-right me-2"></i> About Us</a>
-              <a href=""><i class="fas fa-angle-right me-2"></i> Contact Us</a>
-              <a href=""
-                ><i class="fas fa-angle-right me-2"></i> Privacy Policy</a
-              >
-              <a href=""
-                ><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a
-              >
-              <a href=""
-                ><i class="fas fa-angle-right me-2"></i> Our Blog & News</a
-              >
-              <a href=""><i class="fas fa-angle-right me-2"></i> Our Team</a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item d-flex flex-column">
-              <h4 class="mb-4 text-white">We Care Services</h4>
-              <a href=""
-                ><i class="fas fa-angle-right me-2"></i> All Services</a
-              >
-              <a href=""
-                ><i class="fas fa-angle-right me-2"></i> Physiotherapy</a
-              >
-              <a href=""><i class="fas fa-angle-right me-2"></i> Diagnostics</a>
-              <a href=""
-                ><i class="fas fa-angle-right me-2"></i> Manual Therapy</a
-              >
-              <a href=""
-                ><i class="fas fa-angle-right me-2"></i> Massage Therapy</a
-              >
-              <a href=""
-                ><i class="fas fa-angle-right me-2"></i> Rehabilitation</a
-              >
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 col-xl-3">
-            <div class="footer-item d-flex flex-column">
-              <h4 class="mb-4 text-white">Contact Info</h4>
-              <a href=""
-                ><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York,
-                USA</a
-              >
-              <a href=""
-                ><i class="fas fa-envelope me-2"></i> info@example.com</a
-              >
-              <a href=""
-                ><i class="fas fa-envelope me-2"></i> info@example.com</a
-              >
-              <a href=""><i class="fas fa-phone me-2"></i> +91 8810503187</a>
-              <a href="" class="mb-3"
-                ><i class="fas fa-print me-2"></i> +012 345 67890</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright py-4">
-      <div class="container">
-        <div class="row g-4 align-items-center">
-          <div class="col-md-6 text-center text-md-start mb-md-0">
-            <span class="text-white"
-              ><a href="#"
-                ><i class="fas fa-copyright text-light me-2"></i>Your Site
-                Name</a
-              >, All right reserved.</span
+            <div
+              class="section mt-5 text-center wow fadeInUp"
+              data-wow-delay="0.1s"
             >
-          </div>
-          <div class="col-md-6 text-center text-md-end text-white">
-            Designed By
-            <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+              <h3 class="mb-4">🌟 The CoreMotion Vibe</h3>
+              <p class="lead mb-3">
+                We know you’re doing big things. We just make sure your body
+                keeps up with your ambition.
+              </p>
+              <ul
+                class="list-unstyled d-flex justify-content-center flex-wrap gap-4 mb-4"
+              >
+                <li class="h4 text-primary">
+                  <i class="fas fa-minus-circle me-2"></i>Less pain.
+                </li>
+                <li class="h4 text-primary">
+                  <i class="fas fa-plus-circle me-2"></i>More energy.
+                </li>
+                <li class="h4 text-primary">
+                  <i class="fas fa-infinity me-2"></i>Sustainable hustle.
+                </li>
+              </ul>
+              <div class="highlight-box mx-auto" style="max-width: 800px">
+                <p class="fw-bold">At CoreMotion, we believe:</p>
+                <p>
+                  You don’t have to choose between chasing dreams and protecting
+                  your health. You can do both — and we’ll show you how.
+                </p>
+              </div>
+              <a
+                href="contact.html"
+                class="btn btn-primary rounded-pill text-white py-3 px-5 mt-4 pulse"
+                >Optimize Your Workspace Now</a
+              >
+            </div>
           </div>
         </div>
+        <!-- Ergonomics at CoreMotion Section End -->
+
+        <!-- EduHub Section Start -->
+        <div class="container-fluid py-5" id="eduhub-details">
+          <div class="container py-5">
+            <div class="section-title mb-5 text-center wow fadeInUp">
+              <div class="sub-style mx-auto">
+                <h4 class="sub-title px-3 mb-0">Empower Your Health</h4>
+              </div>
+              <h1 class="display-3 mb-4">📚 EduHub: Learn With Us</h1>
+              <p class="mb-0 lead">
+                Check out our Education Hub for valuable insights and resources
+                to support your health journey.
+              </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+              <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="physio-card h-100">
+                  <h3>What You'll Find in EduHub:</h3>
+                  <ul class="why-choose-list">
+                    <li>
+                      <strong>Tips to improve posture:</strong> Simple,
+                      actionable advice for better alignment and reduced strain.
+                    </li>
+                    <li>
+                      <strong>Injury prevention guides:</strong> Learn how to
+                      safeguard your body against common injuries.
+                    </li>
+                    <li>
+                      <strong>Home & workplace ergonomics advice:</strong>
+                      Create a healthier environment wherever you are.
+                    </li>
+                    <li>
+                      <strong>Expert Q&As and rehab resources:</strong> Get
+                      answers to your questions and access to proven recovery
+                      strategies.
+                    </li>
+                    <li>
+                      <strong>Wellness articles and videos:</strong> Stay
+                      updated with the latest in physical health and well-being.
+                    </li>
+                  </ul>
+                  <div class="text-center mt-4">
+                    <a
+                      href="blog.html"
+                      class="btn btn-primary rounded-pill text-white py-2 px-4"
+                      >Visit the EduHub</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGVkdWNhdGlvbiUyMGh1YnxlbnwwfHwwfHx8MA%3D%3D"
+                  class="img-fluid rounded-pill shadow-lg"
+                  alt="EduHub Learning"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- EduHub Section End -->
+
+        <!-- Feature Start -->
+        <div class="container-fluid feature py-5">
+          <div class="container py-5">
+            <div class="section-title mb-5 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="sub-style mx-auto">
+                <h4 class="sub-title px-3 mb-0">benefits</h4>
+              </div>
+              <h1 class="display-3 mb-4">
+                The benefits of online physiotherapy
+              </h1>
+              <p class="mb-0 lead">
+                At CoreMotion, we deliver full physiotherapy assessments and
+                personalised rehab plans for injuries from sport, daily life, or
+                surgery – all online.
+              </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+              <div
+                class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+                data-wow-delay="0.1s"
+              >
+                <div class="row-cols-1 feature-item p-4">
+                  <div class="col-12">
+                    <div class="feature-icon mb-4">
+                      <div class="p-3 d-inline-flex bg-white rounded">
+                        <i class="fas fa-diagnoses fa-4x text-primary"></i>
+                      </div>
+                    </div>
+                    <div class="feature-content d-flex flex-column">
+                      <h5 class="mb-4">Save Time and Money</h5>
+                      <p class="mb-0">
+                        Our online sessions are quicker and more flexible—no
+                        need to miss work or pay for travel.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+                data-wow-delay="0.3s"
+              >
+                <div class="row-cols-1 feature-item p-4">
+                  <div class="col-12">
+                    <div class="feature-icon mb-4">
+                      <div class="p-3 d-inline-flex bg-white rounded">
+                        <i
+                          class="fas fa-briefcase-medical fa-4x text-primary"
+                        ></i>
+                      </div>
+                    </div>
+                    <div class="feature-content d-flex flex-column">
+                      <h5 class="mb-4">Support You Can Trust</h5>
+                      <p class="mb-0">
+                        We’re here for you with kindness, patience, and
+                        understanding at every stage of your recovery.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+                data-wow-delay="0.5s"
+              >
+                <div class="row-cols-1 feature-item p-4">
+                  <div class="col-12">
+                    <div class="feature-icon mb-4">
+                      <div class="p-3 d-inline-flex bg-white rounded">
+                        <i class="fas fa-hospital-user fa-4x text-primary"></i>
+                      </div>
+                    </div>
+                    <div class="feature-content d-flex flex-column">
+                      <h5 class="mb-4">Immediate Access to Care</h5>
+                      <p class="mb-0">
+                        Start your treatment right away, without waiting lists.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+                data-wow-delay="0.7s"
+              >
+                <div class="row-cols-1 feature-item p-4">
+                  <div class="col-12">
+                    <div class="feature-icon mb-4">
+                      <div class="p-3 d-inline-flex bg-white rounded">
+                        <i class="fas fa-users fa-4x text-primary"></i>
+                      </div>
+                    </div>
+                    <div class="feature-content d-flex flex-column">
+                      <h5 class="mb-4">Expert Care, No Matter Where You Are</h5>
+                      <p class="mb-0">
+                        Get specialized treatment for your injury from anywhere.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+              <br /><a
+                href="feature.html"
+                class="btn btn-primary rounded-pill text-white py-3 px-5"
+                >More Benefits</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Feature End -->
+
+        <!-- Consultation Section Start -->
+        <div class="container">
+          <div class="section wow fadeIn" data-wow-delay="0.1s">
+            <h2 class="text-center mb-4">
+              Need More Information? We're Here to Help!
+            </h2>
+            <div class="row">
+              <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <p>
+                  We understand you may be new to online physiotherapy, but
+                  clinical research shows it's just as effective as in-person
+                  visits for most injuries.
+                </p>
+                <p>
+                  As experienced musculoskeletal specialists, we've helped
+                  countless people recover quickly.
+                </p>
+                <p>
+                  With our expertise in telemedicine, we diagnose accurately,
+                  recommend effective home exercises, and create personalized
+                  recovery plans—all online.
+                </p>
+              </div>
+              <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                <p>
+                  Using cutting-edge technology, AI, and rehab software, we
+                  accelerate your recovery process.
+                </p>
+                <div class="highlight-box">
+                  <h4>Begin Your Online Physiotherapy Journey</h4>
+                  <p>
+                    From aches and pains to sciatica, sports injuries, or
+                    accidents, CoreMotion is ready to assist. Schedule your
+                    online assessment today.
+                  </p>
+                </div>
+                <div class="text-center mt-4">
+                  <a
+                    href="appointment.html"
+                    class="btn btn-primary rounded-pill text-white py-3 px-5 pulse"
+                    >Book Your Consultation Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Consultation Section End -->
       </div>
     </div>
-    <!-- Copyright End -->
-
-    <!-- Back to Top -->
-    <a href="#" class="btns btn-primary btn-lg-square back-to-top"
-      ><i class="fa fa-arrow-up"></i
-    ></a>
-
-    <!-- JavaScript Libraries -->
+    <!-- JS Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <script>
-      // Initialize WOW.js for animations
-      new WOW().init();
-
-      // Accordion functionality
-      const acc = document.querySelectorAll(".accordion");
-      acc.forEach((btn) => {
-        btn.addEventListener("click", function () {
-          this.classList.toggle("active");
-          const panel = this.nextElementSibling;
-          if (panel.style.display === "block") {
-            panel.style.display = "none";
-          } else {
-            panel.style.display = "block";
-          }
-        });
-      });
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-    </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
