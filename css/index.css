@@ -1,0 +1,590 @@
+/* Custom Styles for CoreMotion Redesign */
+
+/* General Typography and Colors */
+body {
+    font-family: 'Lato', sans-serif; /* Body font */
+    color: #4a4a4a; /* Dark gray for general text */
+}
+
+h1, h2, h3, h4, h5, h6, .coremotion-hero-heading, .coremotion-section-title, .coremotion-promise-emphasis {
+    font-family: 'Playfair Display', serif; /* Headline font */
+    color: #2c3e50; /* Darker blue-gray for headings */
+}
+
+.coremotion-text-primary {
+    color: #007F89 !important; /* Deep Teal - primary brand color */
+}
+
+/* Section Spacing */
+.coremotion-hero, .coremotion-vision, .coremotion-leadership, .coremotion-expertise, .coremotion-online-benefits, .coremotion-faq, .coremotion-promise, .coremotion-footer {
+    padding-top: 100px; /* Consistent vertical spacing */
+    padding-bottom: 100px; /* Consistent vertical spacing */
+}
+@media (max-width: 991.98px) {
+    .coremotion-hero, .coremotion-vision, .coremotion-leadership, .coremotion-expertise, .coremotion-online-benefits, .coremotion-faq, .coremotion-promise, .coremotion-footer {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+
+/* --- Topbar Enhancements --- */
+.bg-dark .d-flex a {
+    transition: color 0.3s ease;
+}
+.bg-dark .d-flex a:hover {
+    color: #007F89 !important; /* Teal on hover */
+}
+/* Ensure calendar icon is visible on mobile if desired, remove d-none d-lg-block from its parent if so */
+@media (max-width: 991.98px) {
+    .bg-dark .d-flex {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+    .bg-dark .d-flex a {
+        margin: 5px 10px;
+    }
+}
+
+
+/* --- Hero Banner Section --- */
+.coremotion-hero {
+    background: linear-gradient(rgba(0, 127, 137, 0.8), rgba(0, 127, 137, 0.8)), url('../img/hero-background-gradient.jpg') no-repeat center center; /* Teal gradient overlay */
+    background-size: cover;
+    position: relative;
+    padding-top: 150px; /* Adjust for navbar height */
+    padding-bottom: 150px;
+    color: #ffffff;
+}
+
+.coremotion-hero-heading {
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.coremotion-hero-subheading {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.coremotion-hero-image-container {
+    background-color: #f0f8ff; /* Light bluish-white background */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.coremotion-hero-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Call to Action Buttons */
+.coremotion-btn-primary {
+    background-color: #007F89; /* Deep Teal */
+    border-color: #007F89;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 15px 40px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.coremotion-btn-primary:hover {
+    background-color: #005f6b; /* Darker Teal on hover */
+    border-color: #005f6b;
+    color: #ffffff;
+}
+
+.coremotion-btn-outline {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 15px 40px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.coremotion-btn-outline:hover {
+    background-color: #ffffff;
+    color: #007F89; /* Teal text on white hover */
+    border-color: #ffffff;
+}
+
+@media (max-width: 767.98px) {
+    .coremotion-hero-heading {
+        font-size: 2.5rem;
+    }
+    .coremotion-hero-subheading {
+        font-size: 1rem;
+    }
+    .coremotion-btn-primary, .coremotion-btn-outline {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+    .coremotion-hero .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    .coremotion-hero .d-flex .me-3 {
+        margin-right: 0 !important;
+        margin-bottom: 15px;
+    }
+    .coremotion-hero-image-container {
+        margin-top: 40px;
+    }
+}
+
+/* --- Our Vision Section --- */
+.coremotion-vision {
+    background-color: #e6f6f7; /* Very light teal/sage */
+}
+.coremotion-section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+.coremotion-text-highlight {
+    font-weight: 600;
+    color: #007F89;
+}
+.coremotion-vision-pillar {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensures equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.coremotion-vision-pillar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.coremotion-pillar-icon {
+    font-size: 3rem;
+    color: #007F89;
+    margin-bottom: 15px;
+}
+.coremotion-pillar-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #34495e;
+}
+.coremotion-vision-image-container {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.coremotion-vision-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.coremotion-spine-illustration {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust size as needed */
+    opacity: 0.3; /* Subtle overlay */
+    z-index: 1;
+}
+
+@media (max-width: 767.98px) {
+    .coremotion-section-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .coremotion-text-highlight {
+        text-align: center;
+    }
+    .coremotion-vision-pillar {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* --- Our Leadership & Innovation Section --- */
+.coremotion-leadership {
+    background-color: #f8fcfc; /* Light off-white */
+}
+.coremotion-leader-image-container {
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px; /* Space for divider */
+}
+.coremotion-leader-image-container img {
+    width: 300px; /* Fixed size for headshot */
+    height: 300px; /* Fixed size for headshot */
+    object-fit: cover;
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 5px solid #ffffff; /* White border */
+    position: relative;
+    z-index: 2;
+}
+.coremotion-image-divider {
+    position: absolute;
+    bottom: -15px; /* Position below the image */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%; /* Width of the line */
+    height: 4px; /* Thickness of the line */
+    background-color: #007F89; /* Teal color */
+    border-radius: 2px;
+    z-index: 1;
+}
+.coremotion-sub-title {
+    color: #007F89;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+.coremotion-blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #34495e;
+    border-left: 4px solid #007F89;
+    padding-left: 20px;
+    margin-left: 0;
+}
+.coremotion-blockquote-small {
+    font-size: 1.1rem;
+}
+.coremotion-linkedin-btn {
+    background-color: #007F89;
+    border-color: #007F89;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.coremotion-linkedin-btn:hover {
+    background-color: #005f6b;
+    border-color: #005f6b;
+    color: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+    .coremotion-leader-image-container {
+        margin-bottom: 60px; /* More space on smaller screens */
+    }
+    .coremotion-leader-image-container img {
+        width: 250px;
+        height: 250px;
+    }
+}
+@media (max-width: 767.98px) {
+    .coremotion-leader-image-container {
+        margin-bottom: 40px;
+    }
+    .coremotion-leader-image-container img {
+        width: 200px;
+        height: 200px;
+    }
+    .coremotion-section-title, .coremotion-sub-title, .coremotion-blockquote {
+        text-align: center;
+    }
+    .coremotion-blockquote {
+        border-left: none; /* Remove border on small screens */
+        padding-left: 0;
+    }
+    .coremotion-linkedin-btn {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+/* --- Why We Exist: Our Expertise Section --- */
+.coremotion-expertise {
+    background-color: #f3fdfd; /* Light sage/teal background */
+}
+.coremotion-expertise .section-title .coremotion-section-title {
+    margin-bottom: 15px;
+}
+.coremotion-sub-text {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.coremotion-service-card {
+    background-color: #ffffff;
+    border: 1px solid #e0f2f2; /* Light border */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to top */
+    align-items: center;
+}
+.coremotion-service-card:hover {
+    border-color: #007F89; /* Teal border on hover */
+    box-shadow: 0 8px 25px rgba(0, 127, 137, 0.15); /* Teal shadow on hover */
+    transform: translateY(-5px);
+}
+.coremotion-icon-box {
+    width: 80px;
+    height: 80px;
+    background-color: #e0f2f2; /* Lighter teal for icon background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    transition: background-color 0.3s ease;
+}
+.coremotion-service-card:hover .coremotion-icon-box {
+    background-color: #007F89; /* Darker teal on hover */
+}
+.coremotion-card-icon {
+    font-size: 2.5rem;
+    color: #007F89;
+    transition: color 0.3s ease;
+}
+.coremotion-service-card:hover .coremotion-card-icon {
+    color: #ffffff; /* White icon on hover */
+}
+.coremotion-card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+.coremotion-card-description {
+    font-size: 1rem;
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* EduHub Section */
+.coremotion-eduhub {
+    background-color: #ffffff; /* White background for contrast */
+    border-top: 1px solid #eee;
+}
+.coremotion-eduhub-image-container {
+    background-color: #f0f8ff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.coremotion-eduhub-image-container img {
+    height: 400px; /* Fixed height for consistency */
+    object-fit: cover;
+    object-position: center;
+}
+.coremotion-eduhub-features li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    color: #4a4a4a;
+}
+.coremotion-eduhub-features li .fas {
+    font-size: 1.2rem;
+}
+
+
+/* --- Why Choose Online Physiotherapy (Benefits + Steps) --- */
+.coremotion-online-benefits {
+    background-color: #e6f6f7; /* Consistent light teal/sage */
+}
+.coremotion-feature-list li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+.coremotion-feature-list li i {
+    font-size: 1.2rem;
+    color: #007F89;
+    margin-right: 8px;
+}
+.coremotion-alert-text {
+    background-color: #fff3cd; /* Light warning yellow */
+    color: #856404; /* Dark yellow text */
+    border: 1px solid #ffeeba;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    display: inline-block; /* To make it wrap content */
+}
+.coremotion-online-image-container {
+    background-color: #f0f8ff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.coremotion-online-image-container img {
+    height: 450px; /* Fixed height for visual consistency */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Solutions To Your Pain - Step by Step Flow */
+.coremotion-how-it-works {
+    background-color: #ffffff; /* White background for steps */
+    border-top: 1px solid #eee;
+}
+.coremotion-step-card {
+    border: 1px solid #e0f2f2;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+.coremotion-step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 127, 137, 0.15);
+}
+.coremotion-step-card img {
+    width: 100%;
+    height: 220px; /* Consistent image height for steps */
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+.coremotion-step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+.coremotion-step-description {
+    font-size: 0.95rem;
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+@media (max-width: 991.98px) {
+    .coremotion-online-image-container img {
+        height: 350px;
+        margin-top: 40px;
+    }
+    .coremotion-step-card img {
+        height: 180px;
+    }
+    .coremotion-step-title {
+        font-size: 1.4rem;
+    }
+}
+@media (max-width: 767.98px) {
+    .coremotion-online-image-container img {
+        height: 250px;
+    }
+    .coremotion-step-card img {
+        height: 150px;
+    }
+    .coremotion-step-title {
+        font-size: 1.2rem;
+    }
+    .coremotion-alert-text {
+        font-size: 0.9rem;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+
+/* --- FAQs Section --- */
+.coremotion-faq {
+    background-color: #f8fcfc;
+}
+.coremotion-faq .accordion-item {
+    background-color: #ffffff;
+    border: 1px solid #e0f2f2;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    overflow: hidden; /* Ensure rounded corners for children */
+}
+.coremotion-faq .accordion-button {
+    background-color: #ffffff;
+    color: #2c3e50;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    padding: 18px 25px;
+    border: none;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+.coremotion-faq .accordion-button:not(.collapsed) {
+    color: #007F89; /* Teal when open */
+    background-color: #f3fdfd; /* Light teal when open */
+    border-bottom: 1px solid #007F89;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+}
+.coremotion-faq .accordion-button:focus {
+    box-shadow: none;
+    outline: none;
+}
+.coremotion-faq .accordion-button::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f078"; /* Chevron down icon */
+    font-weight: 900;
+    float: right;
+    transition: transform 0.3s ease;
+}
+.coremotion-faq .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+}
+.coremotion-faq .accordion-body {
+    padding: 20px 25px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+    background-color: #fdfefe;
+}
+
+@media (max-width: 767.98px) {
+    .coremotion-faq .accordion-button {
+        font-size: 1rem;
+        padding: 15px 20px;
+    }
+    .coremotion-faq .accordion-body {
+        padding: 15px 20px;
+    }
+}
+
+
+/* --- Our Promise Section --- */
+.coremotion-promise {
+    background: linear-gradient(rgba(0, 127, 137, 0.9), rgba(0, 127, 137, 0.9)), url('../img/promise-background.jpg') no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.coremotion-promise .display-5 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.9);
+}
+.coremotion-promise-emphasis {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    margin-bottom: 50px;
+}
+/* Reusing coremotion-btn-primary for the CTA */
+
+@media (max-width: 991.98px) {
+    .coremotion-promise .display-5 {
+        font-size: 2rem;
+    }
+    .coremotion-promise-emphasis {
+        font-size: 2.5rem;
+    }
+}
